@@ -1,0 +1,159 @@
+.banner-swiper-wrapper {
+    position: relative;
+    margin-bottom: 58px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: white;
+      font-size: 32px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 12px;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+  
+      &:hover {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  
+    .swiper-button-prev {
+      left: 20px;
+    }
+  
+    .swiper-button-next {
+      right: 20px;
+    }
+  }
+  
+  .banner-swiper-main {
+    width: 100%;
+    height: 969px;
+  
+    .swiper-slide {
+      position: relative;
+    }
+  }
+  
+  .banner {
+    height: 969px;
+    position: relative;
+    overflow: hidden;
+  
+    .banner__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  
+    h1 {
+      position: absolute;
+      left: 68px;
+      bottom: 312px;
+      width: 739px;
+      height: 130px;
+      color: #fff;
+      font-family: Inter;
+      font-size: 54px;
+      font-weight: 600;
+      line-height: 65px;
+      text-align: left;
+      z-index: 2;
+    }
+  
+    ul {
+      display: flex;
+      width: 1250px;
+      position: absolute;
+      left: 68px;
+      bottom: 205px;
+      list-style: none;
+      gap: 44px;
+      z-index: 2;
+  
+      li {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+    }
+  
+    .btns {
+      width: 1296.6px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 64px;
+      left: 62px;
+      z-index: 2;
+  
+      .btn1 {
+        width: 435px;
+        height: 68px;
+        border-radius: 40px;
+        background: rgb(220, 34, 21);
+        color: #fff;
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+  
+        &:hover {
+          background: rgb(255, 60, 45);
+          transform: scale(1.03);
+        }
+  
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+  
+      .btn2 {
+        width: 318.6px;
+        height: 61.35px;
+        border-radius: 51.27px;
+        background: rgb(220, 34, 21);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 42px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+  
+        &:hover {
+          background: rgb(255, 60, 45);
+          transform: scale(1.03);
+        }
+  
+        &:active {
+          transform: scale(0.98);
+        }
+  
+        .btn-icon {
+          width: 37.35px;
+          height: 37.35px;
+        }
+      }
+    }
+  }
+  
