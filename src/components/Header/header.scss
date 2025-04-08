@@ -1,0 +1,124 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #C8180C;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    .hed-kv {
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+    }
+
+    .hed-words {
+        display: flex;
+        gap: 30px;
+
+        h3 {
+            margin: 0;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #007bff;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: #007bff;
+                transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .burger {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+
+        div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+    }
+
+    .menu-select {
+        display: none;
+        margin-top: 10px;
+        width: 100%;
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 10px;
+        top: 100%; 
+      
+        .hed-words {
+          display: none;
+        }
+      
+        .burger {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          cursor: pointer;
+          position: relative;
+          z-index: 2; // үстүрөөк болуш үчүн
+        }
+      
+        .menu-select {
+          display: none;
+          position: absolute;
+          top: 100%; // бургердин түбүнөн чыксын
+          left: 0;
+          width: 100%;
+          background-color: #ffffff;
+          padding: 15px 20px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1;
+      
+          select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+          }
+        }
+      
+        .menu-select.active {
+          display: block;
+        }
+      }
+      
+      
+}
