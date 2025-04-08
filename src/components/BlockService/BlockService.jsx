@@ -7,9 +7,9 @@ import './service.scss'
 
 function BlockService() {
   return (
-    <div className='out container'>
+    <div className='out'>
       <h1>Наши услуги</h1>
-      <div className='service container'>
+      <div className='service '>
         <div className='first'>
           <div className='text'>
             <button className='btn1'>
