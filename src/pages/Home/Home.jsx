@@ -4,6 +4,7 @@ import Banner from '../../components/banner/Banner'
 import BlockService from '../../components/BlockService/BlockService'
 import Card from '../../shared/Card/Card.jsx' 
 import Advantages from '../../components/Advantages/Advantages.jsx'
+import FAQ from '../FAQ/FAQ.jsx'
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <BlockService />
       <Card /> 
       <Advantages />
+      <FAQ />
     </div>
   )
 }
