@@ -5,7 +5,7 @@ import advantages3 from '../../assets/advantages3.svg';
 
 function Advantages() {
   return (
-    <div className='w-full bg-black py-12 px-4 flex justify-center'>
+    <div className='w-[1430px] m-auto bg-black py-12 px-4 flex justify-center '>
       <div className='max-w-[1301px] w-full h-auto md:h-[751px] text-white'>
         <h2 className='text-xl sm:text-2xl font-semibold tracking-widest 
                       text-center md:text-left 
