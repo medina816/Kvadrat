@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import cardData from './card';
 import PropertyCard from './PropertyCard';
 import '../../app/index.css';
+import Container from '../../components/Container/Container'
 
 function Card() {
-  return (
+  return ( 
+    <Container > 
     <div className="w-full bg-black py-6 flex justify-center">
       <div className="w-full bg-black max-w-[1293px]">
         <div className="flex items-center justify-between gap-6 mb-8 px-4 lg:px-0 flex-wrap lg:flex-nowrap">
@@ -14,15 +16,15 @@ function Card() {
             Категории <FaChevronDown className="ml-3" />
           </button>
 
-          <p className="w-full font-semibold text-base sm:text-lg lg:text-xl leading-6 sm:leading-7 lg:leading-7 text-white uppercase tracking-wider mt-0 lg:mt-[-10px] lg:w-[661px] text-center lg:text-left">
+          <p className="w-full font-semibold text-base sm:text-lg lg:text-xl leading-6 sm:leading-7 lg:leading-7 text-white uppercase  mt-0 lg:mt-[-10px] lg:w-[661px] text-center lg:text-left">
             Выбирайте квартиру для жизни или инвестиций. Предложение доступно
-            <span className="bg-[#DC2215] cursor-pointer text-white px-4 sm:px-6 lg:px-9 ml-2 inline-block mt-1 lg:mt-0">
+            <span className="bg-[#DC2215] ml-2 cursor-pointer text-white px-4 sm:px-6 lg:px-9  inline-block mt-1 lg:mt-0">
               К ПОКУПКЕ ПРЯМО СЕЙЧАС
             </span>
           </p>
 
           <Link to="/properties">
-            <h2 className="text-white underline text-xl cursor-pointer tracking-wide sm:mt-4">
+            <h2 className="text-white underline text-xl cursor-pointer  sm:mt-4 mr-1">
               Смотреть больше
             </h2>
           </Link>
@@ -35,12 +37,13 @@ function Card() {
         </div>
 
         <div className="w-full flex justify-center mt-20 px-4">
-          <button className="bg-[#FF3729] w-[250px] h-[57px] text-xl text-white rounded-full hover:bg-red-600 transition">
+          <button className="bg-[#FF3729] w-[250px] h-[57px] text-xl text-white rounded-full hover:bg-red-600 transition ">
             Смотреть все
           </button>
         </div>
       </div>
-    </div>
+    </div> 
+    </Container>
   );
 }
 
