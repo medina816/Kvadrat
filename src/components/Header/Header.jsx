@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './Header.scss';
+import headerwat from '../../assets/svg/headerwat.svg';
+import headerin from '../../assets/svg/headerin.svg';
+import headert from '../../assets/svg/headert.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,31 +14,37 @@ const Header = () => {
 
   const handleMenuItemClick = (href) => {
     window.location.href = href;
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
 
   const handleCloseModal = () => {
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
 
+  
+
   return (
-    <div className="header">
-      <div className="hed-kv">
-        <h2>KVADRAT.KG</h2>
-      </div>
+    <div className="header-bg">
+      <div className="header">
+        <div className="hed-kv">
+          <Link to='/'>
+          <h2>KVADRAT.KG</h2>
+          </Link>
+        </div>
 
-      <div className="hed-words">
-        <h3 onClick={() => handleMenuItemClick('#Главная')}>Главная</h3>
-        <h3 onClick={() => handleMenuItemClick('#Купить недвижимость')}>Купить недвижимость</h3>
-        <h3 onClick={() => handleMenuItemClick('#Услуги')}>Услуги</h3>
-        <h3 onClick={() => handleMenuItemClick('#О компании')}>О компании</h3>
-        <h3 onClick={() => handleMenuItemClick('#FAQ')}>FAQ</h3>
-      </div>
+        <div className="hed-words">
+          <h3 onClick={() => handleMenuItemClick('#Главная')}>Главная</h3>
+          <h3 onClick={() => handleMenuItemClick('#Купить недвижимость')}>Купить недвижимость</h3>
+          <h3 onClick={() => handleMenuItemClick('#Услуги')}>Услуги</h3>
+          <h3 onClick={() => handleMenuItemClick('#О компании')}>О компании</h3>
+          <h3 onClick={() => handleMenuItemClick('#FAQ')}>FAQ</h3>
+        </div>
 
-      <div className="burger" onClick={handleBurgerClick}>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className="burger" onClick={handleBurgerClick}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
 
       {menuOpen && (
@@ -45,6 +55,16 @@ const Header = () => {
             <div className="menu-item" onClick={() => handleMenuItemClick('#Услуги')}>Услуги</div>
             <div className="menu-item" onClick={() => handleMenuItemClick('#О компании')}>О компании</div>
             <div className="menu-item" onClick={() => handleMenuItemClick('#FAQ')}>FAQ</div>
+
+            <div className='Header-iconsimg'>
+              <img src={headerwat} alt="whatsapp" />
+              <img src={headerin} alt="instagram" />
+              <img src={headert} alt="telegram" />
+            </div>
+
+            <div className='Header-btn'>
+              <button>СВЯЗАТЬСЯ</button>
+            </div>
           </div>
         </div>
       )}

@@ -13,9 +13,11 @@ function Footer() {
       <div className='foot-kg'>
         <h2>KVADRAT.KG</h2>
         <p>Наши социальные сети</p>
-        <img src={instagram} alt="" />
-        <img src={whatsapp} alt="" />
-        <img src={telegram} alt="" />
+        <div className='footer-img'>
+          <img src={instagram} alt="" />
+          <img src={whatsapp} alt="" />
+          <img src={telegram} alt="" />
+        </div>
       </div>
 
       <div className='footer-firstblok'>

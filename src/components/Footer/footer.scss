@@ -12,7 +12,7 @@
     //   display: flex;
       flex-direction: column;
       align-items: flex-start;
-      text-align: left;
+      // text-align: left;
       width: 200px;
     
       h2 {
@@ -24,15 +24,14 @@
       p {
         color: #aaa;
       }
+
+      .footer-img{
+        display: flex;
+      }
     
       img {
+        width: 32px;
         margin: 10px;
-        // display: flex;
-        width: 28px;
-        height: 28px;
-        margin-top: 10px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
     
         &:hover {
           opacity: 0.7;
@@ -101,11 +100,11 @@
   .footer-firstblok,
   .footer-second-group,
   .footer-Contacts {
-    display: flex;
+    // display: flex;
     flex-direction: column;
     gap: 10px;
   }
 }
 
-  }
+}
   

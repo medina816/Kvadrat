@@ -5,6 +5,7 @@ import BlockService from '../../components/BlockService/BlockService'
 import Card from '../../shared/Card/Card.jsx' 
 import Advantages from '../../components/Advantages/Advantages.jsx'
 
+
 function Home() {
   return (
     <div>

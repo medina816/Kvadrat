@@ -5,17 +5,21 @@ import About from "../../pages/About/About";
 import Service from "../../pages/Service/Service";
 import BuyHouse from "../../pages/BuyHouse/BuyHouse";
 import FAQ from "../../pages/FAQ/FAQ";
+import CardDetails from '../../pages/cardDetails/CardDetails';
 
 export const myRouter = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
+       
+
         children: [
             { path: "/", element: <Home /> },
             { path: "about", element: <About /> },
             { path: "service", element: <Service /> },
             { path: "buy-house", element: <BuyHouse /> },
-            {path: "faq", element: <FAQ />}
+            { path: "faq", element: <FAQ />},
+            { path: "cardDetails", element: <CardDetails /> }
         ],
     }
 ])

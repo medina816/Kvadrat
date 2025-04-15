@@ -3,6 +3,8 @@ import { FaChevronDown } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import cardData from './card';
 import '../../app/index.css';
+import { Link } from 'react-router-dom';
+import CardDetails from '../../pages/cardDetails/CardDetails';
 
 function Card() {
   return (
@@ -72,10 +74,13 @@ function Card() {
                       <span className="text-base  sm:text-lg font-semibold text-[#0A0200]">{item.price}</span>
                     </div>
                   </div>
-
-                  <button className="w-full bg-[#DC2215] text-white text-lg rounded-full h-[50px] hover:bg-red-700 transition">
-                    Подробнее
-                  </button>
+                  <Link to="/CardDetails">
+                    <button  className="w-full bg-[#DC2215] text-white text-lg rounded-full h-[50px] hover:bg-red-700 transition">
+                      Подробнее
+                    </button>
+                  </Link>
+                 
+                  
                 </div>
               </div>
             ); 
