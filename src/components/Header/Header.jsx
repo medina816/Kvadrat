@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Header.scss';
-import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,10 +19,8 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="hed-kv"> 
-        <Link to="/"> 
-        <h2>KVADRAT.KG</h2> 
-        </Link>
+      <div className="hed-kv">
+        <h2>KVADRAT.KG</h2>
       </div>
 
       <div className="hed-words">

@@ -10,12 +10,12 @@ function PropertyCard({ item }) {
 
   const prevImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + item.images.length) % item.images.length);
-  };
+  }; 
 
   return (
-    <div className="bg-white rounded-[4px] shadow-md hover:shadow-xl transition duration-300 overflow-hidden flex flex-col pb-6">
+    <div className="bg-white rounded-[4px] shadow-md hover:shadow-xl transition duration-300 overflow-hidden flex flex-col pb-6 h-[530px]">
       <div className="relative">
-        <img src={item.images[currentIndex]} alt={item.title} className="w-full h-[207px] object-cover" />
+        <img src={item.images[currentIndex]} alt={item.title} className="w-full h-[277px] object-cover" />
         
         <button onClick={prevImage} className="absolute top-1/2 left-2 -translate-y-1/2 text-white">
           <IoIosArrowBack className="size-6 ml-1" />
@@ -32,7 +32,7 @@ function PropertyCard({ item }) {
         </div>
       </div>
 
-      <div className="px-4 mt-4 space-y-4">
+      <div className="px-4 mt-4 space-y-4 ">
         <h3 className="text-lg font-semibold text-[#0A0200] leading-tight">
           <span className="block">3 - комнатная квартира на</span>
           <span className="block text-center">улице Киевская 30</span>

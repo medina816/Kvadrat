@@ -172,7 +172,7 @@ const AllProperties = () => {
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 {filters.types.map((type) => (
                   <span
-                    key={type}
+                    key={type}    
                     className="bg-[#C8180C] text-white px-4 py-1 rounded-full text-sm cursor-pointer"
                     onClick={() => clearFilterItem('types', type)}
                   >
@@ -186,8 +186,8 @@ const AllProperties = () => {
                     onClick={() => clearFilterItem('amenities', amenity)}
                   >
                     {amenity} ✕
-                  </span>
-                ))}
+                  </span> 
+                ))}                   
                 {filters.location && (
                   <span
                     className="bg-[#C8180C] text-white px-4 py-1 rounded-full text-sm cursor-pointer"
@@ -206,7 +206,7 @@ const AllProperties = () => {
                 )}
                 <div className="flex-grow" />
                 <button
-                  className="underline text-sm mr-[31px]"
+                  className="underline text-sm mr-[3px]"
                   onClick={() =>
                     setFilters({
                       location: '',
@@ -225,7 +225,7 @@ const AllProperties = () => {
 
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
             {filteredData.map((item) => (
-              <div key={item.id} className="max-w-[412px] w-full">
+              <div key={item.id} className="max-w-[417px] w-full ">
                 <PropertyCard item={item} />
               </div>
             ))}
