@@ -14,9 +14,15 @@ function Footer() {
         <h2>KVADRAT.KG</h2>
         <p>Наши социальные сети</p>
         <div className='footer-img'>
-          <img src={instagram} alt="" />
-          <img src={whatsapp} alt="" />
-          <img src={telegram} alt="" />
+          <div>
+            <img src={instagram} alt="" />
+          </div>
+          <div>
+            <img src={whatsapp} alt="" />
+          </div>
+          <div>
+            <img src={telegram} alt="" />
+          </div>
         </div>
       </div>
 
@@ -37,17 +43,23 @@ function Footer() {
       <div className='footer-Contacts'>
         <h2>Контакты</h2>
         <div className="contact-item">
-          <img src={footertel} alt="Телефон" />
+          <div className='background'>
+            <img src={footertel} alt="Телефон" />
+          </div>
           <h2>+996 400 567 455</h2>
         </div>
 
         <div className="contact-item">
-          <img src={footergmail} alt="Email" />
+          <div className='background'>
+            <img src={footergmail} alt="Email" />
+          </div>
           <h2>apartm_@gmail.com</h2>
         </div>
 
         <div className="contact-item">
-          <img src={footerg} alt="Адрес" />
+          <div className='background'>
+            <img src={footerg} alt="Адрес" />
+          </div>
           <h2>г.Бишкек ул.45 Мира</h2>
         </div>
       </div>

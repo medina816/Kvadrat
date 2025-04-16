@@ -20,7 +20,7 @@
 
 
     h2 {
-        font-size: 14px;
+        font-size: 21px;
         font-weight: 600;
         text-transform: uppercase;
         color: #ffffff;
@@ -30,7 +30,7 @@
     .review-buttons {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        gap: 14px;
     }
 
     button {
@@ -40,10 +40,8 @@
         border: none;
         border-radius: 6px;
         display: flex;
-        align-items: center; // икон + текст вертикаль эмес, горизонталдуу
+        align-items: center;
         gap: 8px;
-        align-items: flex-start;
-        justify-content: center;
         font-size: 13px;
         font-weight: 500;
         cursor: pointer;
@@ -56,17 +54,17 @@
             margin-bottom: 10px;
         }
 
-        // div {
-        //     display: flex;
-        //     font-size: 15px;
-        //     flex-direction: column;
-        //     align-items: flex-start;
-        //     line-height: 1.2;
-        // }
+                div {
+                    display: flex;
+                    gap: 2px;
+                    font-size: 18px;
+                    flex-direction: column;
+                    line-height: 1.2;
+                }
 
         span {
             display: flex;
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 400;
             color: #f1f1f1;
             margin-top: 2px;
@@ -87,7 +85,7 @@
     padding: 1.5rem 0;
 
     h2 {
-        font-size: 16px;
+        font-size: 21px;
         font-weight: 600;
         text-transform: uppercase;
         color: #ffffff;
@@ -135,39 +133,6 @@
         }
     }
 
-    // h2 {
-    //     font-size: 16px;
-    //     font-weight: 600;
-    //     text-transform: uppercase;
-    //     color: #ffffff;
-    //     margin-bottom: 1rem;
-    // }
-
-    // display: flex;
-    // flex-wrap: wrap;
-    // gap: 34px;
-
-    // p {
-    //     // width: 136px;
-    //     height: 26px;
-    //     gap: 34px;
-    //     flex-wrap: wrap;
-    //     position: relative;
-    //     padding-left: 1.5rem;
-    //     color: #ffffff;
-    //     font-size: 12px;
-
-    //     &::before {
-    //         // width: 31px;
-    //         // height: 31px;
-    //         // gap: 10px;
-    //         // // content: '✔';
-    //         // position: absolute;
-    //         // left: 0;
-    //         // color: #ef4444;
-    //         font-weight: bold;
-    //     }
-    // }
 }
 
 // =========== КЫСКА МАЛЫМАТ КАРТОЧКА ==========
@@ -189,7 +154,7 @@
 
     .title {
         display: flex;
-        font-size: 1rem;
+        font-size: 19px;
         font-weight: 600;
         text-transform: uppercase;
         color: white;
@@ -267,11 +232,10 @@
             width: 313px;
             height: 209px;
             object-fit: cover;
-            border-radius: 0.5rem;
             transition: transform 0.3s ease;
 
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.02);
             }
         }
     }
@@ -288,8 +252,13 @@
     .card-FORSALE{
         width: 100%;
         height: 150px;
-        // top: 92px;
         left: 20px;
+
+        .card-tch{
+            width: 100%;
+            height: 100%;
+            gap: 17px;
+        }
         .title{
 
             width: 182px;
@@ -297,38 +266,64 @@
             font-size: 10px;
         }
         .status-btn{
-            // margin-top: -12px;
             width: 100px;
             height: 23px;
            font-size: 9px;
         }
         .info-row{
-            margin-top: -12px;
+            width: 100%;
+            display: flex;         
+            align-items: center;
+            gap: 4px;
+
+            img{
+                width: 14px;
+                height: 14px;
+                flex-shrink: 0;
+            }
+            .divider{
+                margin-left: -20px;
+            }
+
+            .location,
+            .posted {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 9px;
+                height: 11px;
+                display: flex;
+                align-items: center;
+                flex-shrink: 1; 
+            }
+            .location{
+                white-space: nowrap;
+                width: 86px;    
+                height: 11px;
+                font-size: 9px;
+                flex-shrink: 1;
+            }
+            .posted{
+                white-space: nowrap;
+                width: 64px;
+                height: 11px;
+                font-size: 9px;
+                flex-shrink: 1;
+                .card-imgshs{
+                    margin-left: -20px;
+                }
+
+              
+            }
         }
 
         .price{
-            margin-top: -40px;
             width: 100%;
             font-size: 9px;
            
         }
-        .location{
-            margin-top: -12px;
-            width: 86px;
-            height: 11px;
-            font-size: 9px;
-        }
 
-        .divider{
-            margin-left: 40px;
-        }
-        .posted{
-            margin-top: -12px;
-            width: 64px;
-            height: 11px;
-            font-size: 9px;
-        }
-
+        
+            
     }
 
     .card-img {
@@ -338,14 +333,19 @@
         flex-direction: column;
         top: 227px;
         left: 20px;
-        gap: 4.61px;
+        gap: 4px;
 
         .main-img {
             width: 100%;
+            border-radius: 1px;
             height: auto;
+            display: flex;
+            gap: 4px;
         }
 
         .side-imgs {
+            display: flex;
+            gap: 4px;
             width: 100%;
             height: 68px;
             flex-direction: row;
@@ -353,6 +353,7 @@
             img {
                 width: 100%;
                 height: 68px;
+                border-radius: 3px;
             }
         }
     }
@@ -372,18 +373,40 @@
     }
 
 
-    .card-review  {
-        gap: 11px;
+    .card-review {
+        .review-buttons {
+          display: flex; 
+          overflow-x: auto;
+          overflow-y: hidden;
+          gap: 11px;
+          padding-bottom: 8px;
+    
+          .review-button {
+            min-width: 130px;
+            height: 60px;
+            flex-shrink: 0;
+            background-color: #a40a00; 
+            color: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+    
         
-
-
-    .review-buttons{
-        display: grid;
-        width: 100%;
-        grid-auto-rows: 60px;
-        gap: 11px;
-    }
-    }
+          scrollbar-width: thin;
+          scrollbar-color: #ccc transparent;
+    
+          &::-webkit-scrollbar {
+            height: 4px;
+          }
+    
+          &::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 10px;
+          }
+        }
+      }
 
     .card-conveniences {
         justify-content: space-between;
