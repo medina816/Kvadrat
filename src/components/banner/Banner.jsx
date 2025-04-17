@@ -59,30 +59,34 @@ function Banner() {
           <SwiperSlide key={index}>
             <div className="banner">
               <img src={banner.img} alt="Banner" className="banner__img" />
-              <h1>{banner.title}</h1>
 
-              <ul>
-                {banner.advantages.map((item, i) => (
-                  <li key={i}>
-                    <img src={markIcon} alt="Icon" className="banner-icon" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="fixed-wrapper">
+                <div className="banner__content container">
+                  <h1>{banner.title}</h1>
 
-              <div className="btns">
-                <button className="btn1">Получить консультацию от риэлтора</button>
-                <button className="btn2">
-                  <img src={telegramIcon} alt="Telegram" className="btn-icon" />
-                  <img src={whatsappIcon} alt="WhatsApp" className="btn-icon" />
-                  <img src={instIcon} alt="Instagram" className="btn-icon" />
-                </button>
+                  <ul>
+                    {banner.advantages.map((item, i) => (
+                      <li key={i}>
+                        <img src={markIcon} alt="Icon" className="banner-icon" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="btns">
+                    <button className="btn1">Получить консультацию от риэлтора</button>
+                    <button className="btn2">
+                      <img src={telegramIcon} alt="Telegram" className="btn-icon" />
+                      <img src={whatsappIcon} alt="WhatsApp" className="btn-icon" />
+                      <img src={instIcon} alt="Instagram" className="btn-icon" />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
 
-        {/* Стрелки */}
         <div className="swiper-button-prev">
           <FaArrowLeft />
         </div>

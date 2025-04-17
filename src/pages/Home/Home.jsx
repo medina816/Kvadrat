@@ -9,7 +9,9 @@ import FAQ from '../FAQ/FAQ.jsx'
 function Home() {
   return (
     <div>
-      <Banner />
+<div className="banner-full">
+  <Banner />
+</div>
       <BlockService />
       <Card /> 
       <Advantages />
