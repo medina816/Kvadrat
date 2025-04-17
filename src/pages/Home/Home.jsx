@@ -8,7 +8,9 @@ import Advantages from '../../components/Advantages/Advantages.jsx'
 function Home() {
   return (
     <div>
-      <Banner />
+<div className="banner-full">
+  <Banner />
+</div>
       <BlockService />
       <Card /> 
       <Advantages />

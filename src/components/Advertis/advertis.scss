@@ -1,0 +1,200 @@
+.advertis {
+  .top-part {
+    width: 1440px;
+    background-color: rgb(154, 10, 0);
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-bottom: 33px;
+
+    .menu {
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    .admin {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .text {
+        h2 {
+          color: rgb(255, 255, 255);
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 22px;
+          text-align: left;
+        }
+
+        p {
+          color: rgb(220, 220, 220);
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 19px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  
+  .adds {
+    width: 902px;
+    margin: 0 auto 56px auto;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      color: rgb(255, 255, 255);
+      font-family: Manrope;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 140%;
+      text-align: left;
+    }
+
+    button {
+      width: 330px;
+      height: 56px;
+      border-radius: 39px;
+      background: rgb(200, 24, 12);
+      color: rgb(255, 255, 255);
+      font-family: Manrope;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 140%;
+      text-align: center;
+    }
+  }
+
+  .info {
+    margin: 0 auto;
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+
+    .block1 {
+      width: 902px;
+      height: 388.3px;
+      position: relative;
+      display: flex;
+      gap: 28px;
+      margin: 0 auto;
+
+      .btn3 {
+        width: 170px;
+        height: 58.83px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 22.71px;
+        padding: 11.25px 32px;
+
+        img {
+          width: 17.66px;
+          height: 22.71px;
+        }
+      }
+
+      img {
+        width: 705px;
+        height: 388.3px;
+        border-radius: 5.51px;
+      }
+
+      h1 {
+        color: #fff;
+        font-family: Manrope;
+        font-size: 23.87px;
+        font-weight: 700;
+        line-height: 140%;
+        text-align: left;
+        position: absolute;
+        width: 468.11px;
+        height: 66px;
+        left: 42.23px;
+        top: 118.42px;
+      }
+
+      p {
+        position: absolute;
+        width: 411.25px;
+        height: 52px;
+        left: 42.23px;
+        bottom: 142px;
+        color: #fff;
+        font-family: Manrope;
+        font-size: 18.36px;
+        font-weight: 500;
+        line-height: 140%;
+        text-align: left;
+      }
+
+      .btns {
+        width: 589.45px;
+        height: 45.17px;
+        display: flex;
+        position: absolute;
+        left: 42px;
+        bottom: 41px;
+        justify-content: space-between;
+
+        .btn1 {
+          width: 288.05px;
+          height: 45.15px;
+          border-radius: 26.5px;
+          background: rgb(220, 34, 21);
+        }
+
+        .btn2 {
+          width: 211.05px;
+          height: 45.17px;
+          border-radius: 26.5px;
+          background: rgb(220, 34, 21);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 28px;
+
+          img {
+            width: 24.74px;
+            height: 24.74px;
+          }
+        }
+      }
+
+      .btn3 {
+        width: 170px;
+        height: 58.83px;
+        border-radius: 46.72px;
+        display: flex;
+        gap: 26px;
+        background: rgb(63, 58, 58);
+
+        img {
+          width: 22.71px;
+          height: 25.2px;
+        }
+      }
+    }
+  }
+
+  // ⬇⬇ Добавляем плавное смещение ⬇⬇
+  .main-content {
+    transition: transform 0.3s ease;
+  }
+
+  .main-content.shifted {
+    transform: translateX(150px);
+  }
+}
