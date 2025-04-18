@@ -12,7 +12,7 @@ function Card() {
 
       <div className="flex items-center  justify-between gap-6 mb-8 px-4 lg:px-0 flex-wrap lg:flex-nowrap">
       <button className="bg-[#C8180C] lg:ml-1 text-white px-5 h-[35px] lg:h-[46px] rounded-full flex items-center justify-between  font-medium lg:text-lg text-[12px] lg:w-[283px] lg:mr-0 ">
-  Категории <FaChevronDown className="ml-7 lg:ml-[25px] " />
+  Категории <FaChevronDown className="ml-7 lg:ml-[20px] " />
 </button>
 
 

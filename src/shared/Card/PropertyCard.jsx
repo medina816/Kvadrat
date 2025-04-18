@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-function PropertyCard({ item }) {
+function PropertyCard({ item, bigImage  }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -14,17 +14,22 @@ function PropertyCard({ item }) {
 
   return (
     <div className="
-      bg-white rounded-[4px] shadow-md hover:shadow-xl 
-      transition duration-300 overflow-hidden flex flex-col
-      pb-2 lg:pb-6 lg:w-[310px]
-      sm:w-[151px] sm:h-[227px] lg:h-[464px] 
-    ">
+  bg-white rounded-[4px] shadow-md hover:shadow-xl 
+  transition duration-300 overflow-hidden flex flex-col justify-between
+  pb-2 w-full h-full
+">
+
       <div className="relative">
-        <img
-          src={item.images[currentIndex]}
-          alt={item.title}
-          className="w-full lg:h-[207px] sm:h-[101px] object-cover"
-        />
+      <img
+  src={item.images[0]}
+  alt={item.title}
+  className={`w-full object-cover ${
+    bigImage
+      ? 'lg:h-[275px] sm:h-[180px]'
+      : 'lg:h-[207px] sm:h-[101px]'
+  }`}
+/>
+
 
         <button
           onClick={prevImage}
@@ -53,36 +58,38 @@ function PropertyCard({ item }) {
       </div>
 
       <div className="px-2 sm:px-4 mt-2 sm:mt-4 space-y-1 lg:space-y-4">
-      <h3 className="text-center font-medium text-[#0A0200] leading-tight text-[10px] sm:text-[24px] lg:text-lg">
+      <h3 className={`text-center font-medium text-[#0A0200] leading-tight ${bigImage ? 'text-2xl mt-[-310px] font-semibold tracking-wide'  : 'text-[10px] sm:text-[24px] lg:text-lg lg:font-semibold'}`}>
   <span className="block leading-tight">3 - комнатная квартира на</span>
   <span className="block leading-tight">улице Киевская 30</span>
 </h3>
-        <div className="flex justify-center mt-1 sm:mt-4">
-          <p className="text-[8px] mr-[39px]  sm:text-[10px] lg:text-base font-normal text-[#0A0200] lg:mr-[70px]">
-            Площадь: {item.area}
-          </p>
-        </div>
 
-        <div className="flex items-center justify-between px-2 sm:px-4 lg:px-4 lg:justify-between lg:mr-[5px] lg:mt-2">
-  <p className="text-[8px] mt-2 sm:text-[10px] lg:text-lg font-semibold text-[#0A0200]"> 
+<div className="flex justify-center mt-1 sm:mt-4">
+  <p className={`text-[#0A0200] font-normal ${bigImage ? 'text-[21px] mr-[96px] mt-1 ' : 'text-[8px] mr-[39px] sm:text-[10px] lg:text-base lg:mr-[70px]'}`}>
+    Площадь: {item.area}
+  </p>
+</div>
+
+<div className={`flex items-center justify-between px-2 sm:px-4 lg:px-4 lg:justify-between lg:mr-[5px] ${bigImage ? 'mt-4' : 'lg:mt-2'}`}>
+  <p className={`font-semibold text-[#0A0200] ${bigImage ? 'text-[28px] font-normal ml-1 mt-7' : 'text-[8px] mt-2 sm:text-[10px] lg:text-lg'}`}> 
     Цена
   </p>
-  <span className="text-[8px] mt-2 sm:text-[10px] lg:text-lg font-semibold text-[#0A0200]">
+  <span className={`font-semibold text-[#0A0200] ${bigImage ? 'text-[26px] font-normal mt-7' : 'text-[8px] mt-2 sm:text-[10px] lg:text-lg'}`}>
     {item.price}
   </span>
 </div>
 
+<div>
+  <button className={`
+    bg-[#DC2215] text-white rounded-full transition hover:bg-red-700
+    ${bigImage 
+      ? 'w-[346px] text-[23px] font-medium h-[66px] ml-4 mt-1  mb-2' 
+      : ' text-[9px] h-[22px] mt-1 mb-1 ml-[4px] w-[125px] lg:mb-4 sm:text-sm sm:h-[40px] lg:w-[257px] lg:text-xl lg:h-[50px]  lg:mt-[4px] lg:ml-[8px]'
+    }
+  `}>
+    Подробнее
+  </button>
+</div>
 
-        <div>
-          <button className="
-            w-full bg-[#DC2215] mt-1 mb-1 text-white rounded-full  
-            text-[8px] lg:w-[261px] sm:w-[127px] sm:text-sm lg:text-lg 
-            h-[22px] sm:h-[40px] lg:h-[50px] 
-            hover:bg-red-700 transition lg:mt-[12px] lg:ml-[5px] 
-          ">
-            Подробнее
-          </button>
-        </div>
       </div>
     </div>
   );
