@@ -8,6 +8,7 @@ import FAQ from './FAQ/FAQ.jsx'
 import Reviews from './FAQ/Reviews/Reviews.jsx'
 import ModalPage from '../../components/modalPage/ModalPage.jsx'
 
+
 function Home() {
   return (
     <div>
