@@ -17,6 +17,8 @@ import { BiSolidCarGarage } from "react-icons/bi";
 import { useState } from 'react'
 
 function CardDetails() {
+
+
     const [mainImage, setMainImage] = useState(card);
 
     const thumbnails = [cardd, carddd, cardddd];
@@ -81,77 +83,68 @@ function CardDetails() {
                 </p>
             </div>
 
-            <div className='card-review'>
+            <div className="card-review">
                 <h2>Обзор недвижимости</h2>
-                <div className='review-buttons'>
-                    <button>
+                <div className="review-buttons overflow-x-auto flex gap-3 sm:gap-5 pb-3">
+                    <button className="flex items-center space-x-2 min-w-max">
                         <RiBuildingLine />
                         <div>
                             комнаты
-
                             <span>2</span>
                         </div>
-
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <BiBath />
                         <div>
                             Ванна
-
                             <span>1</span>
                         </div>
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <TbFridge />
                         <div>
                             кухня
-
                             <span>1</span>
                         </div>
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <RiDashboardLine />
                         <div>
                             Тип
-
                             <span>Villa</span>
                         </div>
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <MdEditCalendar />
                         <div>
                             год постройки
-
                             <span>2023</span>
                         </div>
-
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <IoBedOutline />
                         <div>
                             Тип
                             <span>2</span>
                         </div>
-
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <BiSelection />
                         <div>
                             кв.фут
-
-                            <span>1,148 </span>
+                            <span>1,148</span>
                         </div>
                     </button>
-                    <button>
+                    <button className="flex items-center space-x-2 min-w-max">
                         <BiSolidCarGarage />
                         <div>
                             Гараж
                             <span>1</span>
                         </div>
-
                     </button>
                 </div>
             </div>
+
 
             <h4 className='header-УДОБСТВА'>УДОБСТВА</h4>
             <div className='card-conveniences'>
