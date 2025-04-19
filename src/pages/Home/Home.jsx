@@ -6,6 +6,7 @@ import Card from '../../shared/Card/Card.jsx'
 import Advantages from '../../components/Advantages/Advantages.jsx'
 import FAQ from './FAQ/FAQ.jsx'
 import Reviews from './FAQ/Reviews/Reviews.jsx'
+import ModalPage from '../../components/modalPage/ModalPage.jsx'
 
 function Home() {
   return (

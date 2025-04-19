@@ -1,0 +1,145 @@
+.modalka {
+    width: 922.82px;
+height: 656px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+.arrow1, .arrow2 {
+    width: 36.61px;
+    height: 36.61px;
+}
+
+.inside {
+    gap: 101px;
+    width: 849px;
+height: 656px;
+border-radius: 4px;
+background: rgb(34, 34, 36);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+.top {
+    width: 735.71px;
+height: 207.45px;
+display: flex;
+
+.top-text {
+    width: 356.71px;
+    display: flex;
+    align-items: center;
+
+    h2 {
+        color: rgb(255, 255, 255);
+font-family: Manrope;
+font-size: 28.87px;
+font-weight: 600;
+line-height: 140%;
+letter-spacing: 0%;
+text-align: left;
+    }
+}
+.top-icon {
+    width: 356.71px;
+    border-radius: 4.61px;
+background: rgb(19, 19, 19);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+}
+.bottom {
+    width: 737.6px;
+height: 234.09px;
+h3 {
+    color: rgb(255, 255, 255);
+font-family: Manrope;
+font-size: 24.8px;
+font-weight: 600;
+line-height: 140%;
+letter-spacing: 0%;
+text-align: left;
+}
+.blocks {
+height: 174.09px;
+display: flex;
+justify-content: space-between;
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    align-items: center;
+    width: 354.23px;
+height: 172.59px;
+
+.top-left {
+    width: 354.23px;
+    border-radius: 4.61px;
+background: rgb(19, 19, 19);
+height: 81.85px;
+display: flex;
+align-items: center;
+padding-left: 20px;
+color: rgb(179, 179, 179);
+font-family: Manrope;
+font-size: 18.44px;
+font-weight: 600;
+line-height: 140%;
+letter-spacing: 0%;
+text-align: left;
+}
+button {
+    width: 313.15px;
+height: 53.66px;
+border-radius: 47.25px;
+border: none;
+background: rgb(200, 24, 12);
+color: rgb(255, 255, 255);
+font-family: Manrope;
+font-size: 18.44px;
+font-weight: 600;
+line-height: 140%;
+letter-spacing: 0%;
+text-align: center;
+}
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+
+
+    button {
+        width: 275.19px;
+height: 45.65px;
+border-radius: 28.09px;
+color: rgb(255, 255, 255);
+font-family: Manrope;
+font-size: 18.06px;
+font-weight: 600;
+line-height: 140%;
+letter-spacing: 0%;
+text-align: center;
+
+background: rgb(200, 24, 12);
+    }
+    h2 {
+        width: 306px;
+        height: 42px;
+        color: rgb(255, 255, 255);
+        font-family: Manrope;
+        font-size: 15.25px;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-align: center;
+    }
+}
+}
+}
+}
+}
