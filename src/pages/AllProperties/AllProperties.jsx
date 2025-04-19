@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import cardData from '../../shared/Card/card';
+import cardData from '../../shared/Card/card'; 
+import { FiChevronDown } from 'react-icons/fi';
 import PropertyCard from '../../shared/Card/PropertyCard';
 
 const AllProperties = () => {
@@ -37,23 +38,28 @@ const AllProperties = () => {
   });
 
   return (
-    <div className=" bg-black text-white min-h-screen py-8 px-4 lg:px-12">
+    <div className=" bg-black text-white min-h-screen py-8 px-4  lg:px-12">
       <div className="flex flex-col lg:flex-row gap-8">
-        <aside className="w-full  lg:w-[420px] bg-[#121212] p-6  rounded-md text-white space-y-6 h-fit mt-[103px] ">
-          <h2 className="text-xl font-semibold tracking-wider uppercase border-b-2 border-[#444] w-max pb-4">
+        <aside className="w-full  lg:w-[420px] bg-[#121212] p-6  rounded-md text-white space-y-6 h-fit mt-[66px] ">
+          <h2 className="text-xl font-semibold tracking-wider uppercase border-b-2 border-[#444] w-max pb-4 mt-4">
             НАЙТИ СВОЮ НЕДВИЖИМОСТЬ
           </h2>
 
           <div>
-            <label className="block text-xl font-semibold mb-3">Местоположение</label>
-            <select
-              className="w-[350px] h-[48px] rounded-md px-5  bg-[#F3F3F3] text-[#33335099] border border-[#F3F3F3] focus:outline-none  text-lg font-medium  mb-[18px]"
-              value={filters.location}
-              onChange={(e) => setFilters({ ...filters, location: e.target.value })}
-            >
-              <option>Выберите местоположение</option>
-            </select>
-          </div>
+  <label className="block text-xl font-semibold mb-3">Местоположение</label>
+
+  <div className="relative w-[350px] mb-[18px]">
+    <select
+      className="appearance-none w-full h-[48px] rounded-md px-5 bg-[#F3F3F3] text-[#33335099] border border-[#F3F3F3] focus:outline-none text-lg font-medium"
+      value={filters.location}
+      onChange={(e) => setFilters({ ...filters, location: e.target.value })}
+    >
+      <option>Выберите местоположение</option>
+    </select>
+
+    <FiChevronDown className="pointer-events-none absolute right-[16px] top-1/2 transform -translate-y-1/2 text-[#33335099] font-light text-[26px]" />
+  </div>
+</div>
 
           <div>
             <p className="max-w-[350px] text-xl font-semibold mb-7 border-t-2 border-[#444] pt-5">Тип недвижимости</p>
@@ -108,7 +114,7 @@ const AllProperties = () => {
                 trackStyle={[{ backgroundColor: '#DC2215' }]}
                 handleStyle={[
                   { borderColor: 'white', backgroundColor: '#DC2215' },
-                  { borderColor: 'white', backgroundColor: '#DC2215' }
+                  { borderColor: 'white ',  backgroundColor: '#DC2215 ' }
                 ]}
                 railStyle={{ backgroundColor: 'white' }}
               />
@@ -148,19 +154,28 @@ const AllProperties = () => {
   </div>
 </div>
         </aside>
-        <main className="flex-1 space-y-6 mt-[105px]">
-          <div className="flex justify-between items-center"> 
+        <main className="flex-1 space-y-6 mt-[60px] ">
+          <div className="flex justify-between items-center mr-[6px]"> 
 											<div className='w-[246px]'> 
-            <p className=' text-2xl font-medium'>Показаны 1-12 из 240 результатов</p> </div>
-            <div className="flex items-center space-x-2   mr-[30px]">
-              <span className='text-2xl font-medium'>Сортировать:</span>
-														<select
-  className="bg-[#DC2215] rounded-[39px] h-[45px] w-[221px] text-white px-2  text-lg font-medium focus:outline-none">
-  <option value="default">по умолчанию</option>
-  <option value="priceLowHigh">Сначала дешевые</option>
-  <option value="priceHighLow">Сначала дорогие</option>
-</select>
-            </div>
+            <p className=' text-2xl font-medium mb-9'>Показаны 1-12 из 240 результатов</p> </div>
+            <div className="flex items-center space-x-2 mr-[24px]">
+  <span className="text-[22px] font-medium mr-[20px] mb-5">Сортировать:</span>
+
+  <div className="relative w-[221px] mb-5 mr-[70px]">
+    <select
+      className="appearance-none bg-[#DC2215] rounded-full h-[45px] w-full text-white px-6 pr-8 text-[18px]  font-medium focus:outline-none"
+    >
+      <option value="default">по умолчанию</option>
+      <option value="priceLowHigh">Сначала дешевые</option>
+      <option value="priceHighLow">Сначала дорогие</option>
+    </select>
+
+    <FiChevronDown className="pointer-events-none absolute right-[18px] top-1/2 transform -translate-y-1/2 text-white text-[26px]" />
+
+  </div>
+</div>
+
+
           </div>
 
           {(filters.types.length > 0 ||
@@ -168,12 +183,12 @@ const AllProperties = () => {
             filters.location ||
             filters.priceRange) && (
             <>
-              <h3 className="text-base font-semibold mb-2">Активные фильтры</h3>
-              <div className="flex flex-wrap items-center gap-2 mb-4">
+              <h3 className="text-[22px]  font-medium tracking-wide">Активные фильтры</h3>
+              <div className="flex flex-wrap items-center  gap-2 mb-4">
                 {filters.types.map((type) => (
                   <span
                     key={type}    
-                    className="bg-[#C8180C] text-white px-4 py-1 rounded-full text-sm cursor-pointer"
+                    className="bg-[#C8180C] text-white px-7 py-2 rounded-full text-[18px] cursor-pointer"
                     onClick={() => clearFilterItem('types', type)}
                   >
                     {type} ✕
@@ -182,7 +197,7 @@ const AllProperties = () => {
                 {filters.amenities.map((amenity) => (
                   <span
                     key={amenity}
-                    className="bg-[#C8180C] text-white px-4 py-1 rounded-full text-sm cursor-pointer"
+                    className="bg-[#C8180C] text-white px-7 py-2 rounded-full text-[18px] cursor-pointer"
                     onClick={() => clearFilterItem('amenities', amenity)}
                   >
                     {amenity} ✕
@@ -190,7 +205,7 @@ const AllProperties = () => {
                 ))}                   
                 {filters.location && (
                   <span
-                    className="bg-[#C8180C] text-white px-4 py-1 rounded-full text-sm cursor-pointer"
+                    className="bg-[#C8180C] text-white px-7 py-2 rounded-full text-[18px] cursor-pointer"
                     onClick={() => setFilters({ ...filters, location: '' })}
                   >
                     {filters.location} ✕
@@ -198,7 +213,7 @@ const AllProperties = () => {
                 )}
                 {filters.priceRange && (
                   <span
-                    className="bg-[#C8180C] text-white px-4 py-1 rounded-full text-sm cursor-pointer"
+                    className="bg-[#C8180C] text-white px-7 py-2 rounded-full text-[18px] cursor-pointer"
                     onClick={() => setFilters({ ...filters, priceRange: '' })}
                   >
                     {filters.priceRange} ✕
@@ -206,7 +221,7 @@ const AllProperties = () => {
                 )}
                 <div className="flex-grow" />
                 <button
-                  className="underline text-sm mr-[3px]"
+                  className=" border-b border-white   text-[18] font-normal mr-[30px]"
                   onClick={() =>
                     setFilters({
                       location: '',
@@ -223,13 +238,16 @@ const AllProperties = () => {
             </>
           )}
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
-            {filteredData.map((item) => (
-              <div key={item.id} className="max-w-[417px] w-full ">
-                <PropertyCard item={item} />
-              </div>
-            ))}
-          </div>
+<div className="grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+  {filteredData.slice(0, 8).map((item) => (
+    <div
+      key={item.id}
+      className="w-[412px] h-[617px] bg-[#121212] mt-[60px] text-white rounded-lg overflow-hidden" 
+    >
+      <PropertyCard item={item} bigImage  />
+    </div>
+  ))}
+</div>    
         </main>
       </div>
     </div>
