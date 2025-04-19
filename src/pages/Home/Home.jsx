@@ -10,7 +10,9 @@ import Reviews from './FAQ/Reviews/Reviews.jsx'
 function Home() {
   return (
     <div>
-      <Banner />
+<div className="banner-full">
+  <Banner />
+</div>
       <BlockService />
       <Card /> 
       <Advantages />
