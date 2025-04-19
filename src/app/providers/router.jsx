@@ -6,6 +6,8 @@ import Service from "../../pages/Service/Service";
 import BuyHouse from "../../pages/BuyHouse/BuyHouse";
 import FAQ from "../../pages/FAQ/FAQ";
 import CardDetails from '../../pages/cardDetails/CardDetails';
+import AllProperties from '../../pages/AllProperties/AllProperties'
+import Advertis from "../../components/Advertis/Advertis";
 
 export const myRouter = createBrowserRouter([
     {
@@ -18,8 +20,10 @@ export const myRouter = createBrowserRouter([
             { path: "about", element: <About /> },
             { path: "service", element: <Service /> },
             { path: "buy-house", element: <BuyHouse /> },
-            { path: "faq", element: <FAQ />},
-            { path: "cardDetails", element: <CardDetails /> }
+            { path: "cardDetails", element: <CardDetails /> },
+            {path: "properties", element: <AllProperties />},
+            {path: "faq", element: <FAQ />},
+            {path: "advertis", element: <Advertis/>},
         ],
     }
 ])
