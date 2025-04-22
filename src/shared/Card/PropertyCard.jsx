@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 function PropertyCard({ item, bigImage  }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -78,7 +79,9 @@ function PropertyCard({ item, bigImage  }) {
   </span>
 </div>
 
+  <Link to="/CardDetails">
 <div>
+  
   <button className={`
     bg-[#DC2215] text-white rounded-full transition hover:bg-red-700
     ${bigImage 
@@ -89,6 +92,7 @@ function PropertyCard({ item, bigImage  }) {
     Подробнее
   </button>
 </div>
+  </Link>
 
       </div>
     </div>
