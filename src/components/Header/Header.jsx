@@ -17,13 +17,13 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="hed-kv">
+      <div className="hed-kv"> 
         <h2>KVADRAT.KG</h2>
       </div>
 
       <div className="hed-words">
         <Link to="/" className="nav-link" onClick={closeMenu}>Главная</Link>
-        <Link to="/buy-house" className="nav-link" onClick={closeMenu}>Купить недвижимость</Link>
+        <Link to="/properties" className="nav-link" onClick={closeMenu}>Купить недвижимость</Link>
         <Link to="/advertis" className="nav-link" onClick={closeMenu}>Услуги</Link>
         <Link to="/about" className="nav-link" onClick={closeMenu}>О компании</Link>
         <Link to="/faq" className="nav-link" onClick={closeMenu}>FAQ</Link>
