@@ -7,6 +7,7 @@ import Advantages from '../../components/Advantages/Advantages.jsx'
 import FAQ from './FAQ/FAQ.jsx'
 import Reviews from './FAQ/Reviews/Reviews.jsx'
 
+
 function Home() {
   return (
     <div>
