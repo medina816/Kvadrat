@@ -35,7 +35,9 @@ const Header = () => {
         </div>
 
         <div className="hed-words">
+          <Link to='/'>
           <h3 onClick={() => handleMenuItemClick('#Главная')}>Главная</h3>
+          </Link>
           <h3 onClick={() => handleMenuItemClick('#Купить недвижимость')}>Купить недвижимость</h3>
           <h3 onClick={() => handleMenuItemClick('#Услуги')}>Услуги</h3>
           <h3 onClick={() => handleMenuItemClick('#О компании')}>О компании</h3>
@@ -60,7 +62,7 @@ const Header = () => {
             borderRadius: '0 0 0 18px',
             right: 0,
             backgroundColor: '#A40A00',
-            zIndex: 100,
+            zIndex: 1000000,
           }}
           onClick={handleCloseModal}>
           <div className="menu-modal" style={{
