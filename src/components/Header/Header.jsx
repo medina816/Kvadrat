@@ -23,7 +23,9 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className="header-bg">
+      <div className='header'>
+
       <div className="hed-kv">
         <h2>KVADRAT.KG</h2>
       </div>
@@ -44,17 +46,18 @@ const Header = () => {
 
       {menuOpen && (
         <div
-          className="modal-overlay"
-          style={{
-            justifyContent: 'center',
-            height: '380px',
-            width: '219px',
-            display: 'flex',
-            position: 'absolute',
-            borderRadius: '0 0 0 18px',
-            right: 0,
-            backgroundColor: '#A40A00',
-            zIndex: 1000000,
+        className="modal-overlay"
+        style={{
+              justifyContent: 'center',  
+              height: '380px', 
+              top: '76px',
+              width: '219px',
+              display: 'flex',
+              position: 'absolute',
+              borderRadius: '0 0 0 18px',
+              right: 0,
+              backgroundColor: '#A40A00',
+              zIndex: 1000000,
           }}
           onClick={closeMenu}
         >
@@ -62,13 +65,13 @@ const Header = () => {
             className="menu-modal"
             style={{ marginTop: '30px' }}
             onClick={(e) => e.stopPropagation()}
-          >
+            >
             <div>
-              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full h-[30px]" onClick={() => handleMenuItemClick('/')}>Главная</div>
-              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full h-[30px]" onClick={() => handleMenuItemClick('/properties')}>Купить недвижимость</div>
-              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full h-[30px]" onClick={() => handleMenuItemClick('/advertis')}>Услуги</div>
-              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full h-[30px]" onClick={() => handleMenuItemClick('/about')}>О компании</div>
-              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full h-[30px]" onClick={() => handleMenuItemClick('/faq')}>FAQ</div>
+              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full " onClick={() => handleMenuItemClick('/')}>Главная</div>
+              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full " onClick={() => handleMenuItemClick('/properties')}>Купить недвижимость</div>
+              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full " onClick={() => handleMenuItemClick('/advertis')}>Услуги</div>
+              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full " onClick={() => handleMenuItemClick('/about')}>О компании</div>
+              <div className="mt-[20px] border-b border-white text-white hover:bg-black w-full " onClick={() => handleMenuItemClick('/faq')}>FAQ</div>
             </div>
 
             <div
@@ -77,14 +80,16 @@ const Header = () => {
                 width: '102px',
                 height: '30px',
                 display: 'flex',
+                top: '308px',
+                left: '162px',
                 gap: '4px',
-                marginTop: '20px',
-                justifyContent: 'center',
+                textAlign: 'center',
+                alignItems: 'center',
               }}
-            >
-              <img src={headerwat} alt="whatsapp" />
-              <img src={headerin} alt="instagram" />
-              <img src={headert} alt="telegram" />
+              >
+              <img className='mt-[20px]' src={headerwat} alt="whatsapp" />
+              <img className='mt-[20px]' src={headerin} alt="instagram" />
+              <img className='mt-[20px]' src={headert} alt="telegram" />
             </div>
 
             <div
@@ -92,23 +97,25 @@ const Header = () => {
               style={{
                 width: '160px',
                 height: '39px',
+                top: '357px',
                 marginTop: '30px',
+                left: '167px',
                 borderRadius: '48px',
                 backgroundColor: '#262626',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
+                textAlign: 'center',
               }}
-            >
+              >
               <button
                 style={{
                   fontWeight: '500',
+                  width: '73px',
+                  height: '15px',
+                  weight: '500',
                   fontSize: '12px',
-                  padding: '10px',
-                  color: 'white',
                   background: 'none',
-                  border: 'none',
                   cursor: 'pointer',
+                  padding: '10px',
+                  marginRight: '10px',
                 }}
               >
                 СВЯЗАТЬСЯ
@@ -117,6 +124,7 @@ const Header = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
