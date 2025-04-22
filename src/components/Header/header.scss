@@ -17,7 +17,7 @@
   align-items: center;
   padding: 20px 40px;
   position: relative;
-  z-index: 1000;
+  // z-index: 1000;
 
   .hed-kv {
     h2 {
@@ -95,16 +95,12 @@
       position: fixed;
       top: 0;
     }
-      // width: 100%;
      
-      // .cursor-pointer{
-      //   border: 1px solid black;
-      // }
       .modal-overlay{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: center;
+        flex-wrap: wrap; 
       }
 
 
