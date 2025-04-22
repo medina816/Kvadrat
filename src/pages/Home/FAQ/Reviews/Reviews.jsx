@@ -28,12 +28,18 @@ const reviews = [
         name: 'Лиза Петренко',
         handle: '@lizokkk',
         image: 'https://t4.ftcdn.net/jpg/02/76/11/41/360_F_276114144_xyAwCmx6IraojhvC2l9cNQEYAx6d28Nq.jpg',
-        text: 'Очень рада что обратилась за помощью в подборе дома компании. Они не только предложили мне отличные варианты по моим критериям но и ....',
+        text: 'Очень рада что обратилась за помощью в подборе дома компании. Они не только предложили мне отличные варианты по моим критериям но и .... ',
         bg: 'bg-neutral-900',
         textColor: 'text-white',
         linkColor: 'text-gray-500'
     },
 ];
+
+function truncateText(text, wordLimit) {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(' ') + '...';
+}
 
 export default function Reviews() {
     const prevRef = useRef(null);
@@ -76,7 +82,7 @@ export default function Reviews() {
                     {reviews.map((review, index) => (
                         <SwiperSlide key={index}>
                             <div
-                                className={`${review.bg} ${review.textColor} rounded-xl p-6 h-full flex flex-col justify-between text-left transition-all duration-300 ${
+                                className={`${review.bg} ${review.textColor} rounded-[4px] p-6 h-full flex flex-col justify-between text-left transition-all duration-300 ${
                                     activeIndex === index ? 'scale-105 shadow-lg' : 'scale-100'
                                 }`}
                             >
@@ -94,7 +100,9 @@ export default function Reviews() {
                                         <p className="text-xs sm:text-sm text-gray-400">{review.handle}</p>
                                     </div>
                                 </div>
-                                <p className="text-xs sm:text-sm mb-5">{review.text}</p>
+                                <p className="text-xs sm:text-[16px] sm:tracking-wide sm:font-medium sm:w-[290px] mb-5">
+                                    {truncateText(review.text, 24)}
+                                </p>
                                 <span className="underline mb-6" style={{
                                             border: '1px solid #FFFFFF80'
                                         }}>
