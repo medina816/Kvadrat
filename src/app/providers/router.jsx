@@ -9,6 +9,7 @@ import CardDetails from '../../pages/cardDetails/CardDetails';
 import AllProperties from '../../pages/AllProperties/AllProperties'
 import Advertis from "../../components/Advertis/Advertis";
 import ManageProperties from '../../pages/ManageProperties/ManageProperties'
+import Add from "../../pages/add/Add.jsx"
 
 export const myRouter = createBrowserRouter([
     {
@@ -26,6 +27,7 @@ export const myRouter = createBrowserRouter([
             {path: "faq", element: <FAQ />},
             {path: "advertis", element: <Advertis/>}, 
             {path: "manageProperties", element: <ManageProperties/>}, 
+            {path: "Add", element: <Add/>},
         ],
     }
 ])
