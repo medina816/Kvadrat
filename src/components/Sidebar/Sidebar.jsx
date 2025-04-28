@@ -6,6 +6,7 @@ import arrowIcon from '../../assets/svg/arrow.svg'
 import flatIcon from '../../assets/svg/flat.svg'
 import personIcon from '../../assets/svg/person.svg'
 import { IoHomeOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -15,7 +16,7 @@ const Sidebar = () => {
         <ul>
           <li>
             <div className='first'>
-            <IoHomeOutline />
+            <IoHomeOutline /> 
 
             <h3>
             Главная
@@ -30,8 +31,10 @@ const Sidebar = () => {
             <h3>
             Обьекты недвижимости    
             </h3>
-            </div>
-            <img src={arrowIcon}/>
+            </div> 
+            <Link to="/manageProperties" > 
+            <img src={arrowIcon}/> 
+            </Link>
             </li>
             {/* ---- */}
           <li>
