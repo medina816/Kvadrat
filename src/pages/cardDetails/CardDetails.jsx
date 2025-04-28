@@ -25,7 +25,7 @@ function CardDetails() {
 
     return (
         <div className='cardDetails'>
-            {/* <div className='container'> */}
+            <div className='container'>
 
 
 
@@ -146,7 +146,7 @@ function CardDetails() {
             </div>
 
 
-            <h4 className='header-УДОБСТВА'>УДОБСТВА</h4>
+            <h4 className='header-УДОБСТВА mt-[30px]'>УДОБСТВА</h4>
             <div className='card-conveniences'>
                 <div>
                     <div>✔</div>
@@ -184,7 +184,7 @@ function CardDetails() {
 
             </div>
         </div>
-        // </div>
+     </div>
     )
 }
 

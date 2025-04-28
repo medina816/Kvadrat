@@ -6,6 +6,7 @@ import telegram from '../../assets/telegram.svg'
 import footertel from '../../assets/footertel.svg'
 import footergmail from '../../assets/footergmail.svg'
 import footerg from '../../assets/footerg.svg'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -38,6 +39,9 @@ function Footer() {
         <p>Акции</p>
         <p>Контакты</p>
         <p>Жилые комплексы</p>
+        <Link to='/Add'>
+        <p>Добаветь</p>
+        </Link>
       </div>
 
       <div className='footer-Contacts'>
