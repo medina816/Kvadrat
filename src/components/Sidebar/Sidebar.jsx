@@ -4,6 +4,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import arrowIcon from '../../assets/svg/arrow.svg';
 import flatIcon from '../../assets/svg/flat.svg';
 import personIcon from '../../assets/svg/person.svg';
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({ isOpen }) => {
   return (
