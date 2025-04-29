@@ -8,6 +8,23 @@ const Add = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
+
+  const saveCard = () => {
+    const title = document.querySelector('.input-A-field').value;
+    const area = document.querySelector('.input-d-field').value;
+    const price = document.querySelector('.input-b-field').value;
+
+    if (!title || !area || !price) {
+      alert('Заполните все поля!');
+      return;
+    }
+
+    alert('Сохранено успешно!');
+    closeModal();
+  };
+
   return (
     <div className="add-container">
       <button onClick={openModal} className="btn-add">
@@ -27,10 +44,47 @@ const Add = () => {
             <div className="modal-content">
 
               {/* <div className="modal-Add-body"> */}
-              <button className="btn-add-photo">
+              <button className="btn-add-photo" onClick={() => document.getElementById('upload-photo').click()}>
                 <FaPhotoVideo className="Add-icon" />
                 <span>Добавить ещё фото</span>
               </button>
+
+              <button
+                className="btn-delete-photo"
+                onClick={() => setSelectedImage(null)}
+              >
+              </button>
+
+
+              <input
+                type="file"
+                accept="image/*"
+                style={{ display: 'none' }}
+                id="upload-photo"
+                onChange={(e) => setSelectedImage(e.target.files[0])}
+              />
+
+
+              {selectedImage && (
+                <div style={{ marginTop: '10px' }}>
+                  <img
+                    src={URL.createObjectURL(selectedImage)}
+                    alt="Selected"
+                    style={{ width: '150px', height: 'auto', borderRadius: '10px' }}
+                  />
+                  {/* Удалить баскычын кошобуз */}
+                  <button
+                    className="btn-delete-photo"
+                    onClick={() => setSelectedImage(null)}
+                    style={{ marginTop: '10px', backgroundColor: 'red', color: 'white', borderRadius: '5px' }}
+                  >
+                    Удалить
+                  </button>
+                </div>
+              )}
+
+
+
 
               <div className="form-grid">
                 <input placeholder="Заголовок" className="input-A-field" />
@@ -71,7 +125,7 @@ const Add = () => {
                 <textarea placeholder="Описание" className="textarea-field" />
               </div>
 
-                <h3 className="section-title">Удобства</h3>
+              <h3 className="section-title">Удобства</h3>
               <div className="amenities-section">
                 <div className="amenities-grid">
                   {[
@@ -88,7 +142,7 @@ const Add = () => {
               </div>
 
               <div className="modal-Add-footer">
-                <button className="btn-save">Сохранить</button>
+                <button onClick={saveCard} className="btn-save">Сохранить</button>
                 <button onClick={closeModal} className="btn-cancel">Отмена</button>
               </div>
             </div>
