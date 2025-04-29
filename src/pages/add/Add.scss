@@ -1,155 +1,138 @@
 .add-container {
   padding: 1rem;
   width: 967px;
-
-  .btn-add {}
 }
 
 .modal-Add {
-
   position: fixed;
   inset: 0;
+  border: 1px solid red;
+  inset: 0; 
   background-color: rgba(0, 0, 0, 0.5);
-
-}
-
-.modal-content {
-  position: relative;
-  width: 872px;
-  max-height: 90vh; 
-  overflow-y: auto; 
-  overflow-x: hidden; 
-  background-color: #101010;
-  border-radius: 22px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  z-index: 999; // Алдыга чыгуу үчүн
+  
+  .modal-content {
+    background-color: #101010;
+    width: 872px;
+    max-height: 90vh;
+    margin-left: 284px;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    // border-radius: 22px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+  }
 }
-
-
-
-
 
 .g-container {
-  width: 927px;
-  height: 1110px;
-  background-color: #101010;
-  top: 173px;
-  margin-bottom: 194px;
-  margin-left: 284px;
-  border-radius: 22px;
-  // border: 1px solid seashell;
+  width: 967px;
+  width: 100%;
+  border: 1px solid red;
 }
 
 .modal-Add-s {
-  width: 927px;
+  border: 1px solid blue;
+  margin-left: 284px;
+  width: 872px;
   height: 80px;
   background: #C8180C;
   border-radius: 22px 22px 0 0;
-  align-items: center;
   display: flex;
+  align-items: center;
+  padding: 0 48px;
+}
 
-  h2 {
-    font-size: 24px;
-    display: flex;
-    margin-left: 48px;
-    font-weight: 600;
-  }
+.modal-Add-s h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
 }
 
 .btn-add-photo {
   width: 267px;
   height: 77px;
-  margin-top: 38px;
-  margin-left: 48px;
+  margin: 38px 0 0 48px;
   background: #222224;
   border-radius: 5px;
-
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 0 16px;
+  color: white;
+}
 
-  .Add-icon {
-    font-size: 40px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btn-add-photo .Add-icon {
+  font-size: 40px;
+}
 
-  }
-
-  span {
-    width: 161;
-    height: 20;
-    font-size: 16px;
-    font-weight: 500;
-
-  }
+.btn-add-photo span {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .form-grid {
-  width: 872px;
-  height: 160px;
-  margin-left: 48px;
-  margin-top: 27px;
+  width: 100%;
   display: flex;
   gap: 10px;
-
-  .input-A-field {
-    background: #222224;
-    width: 424px;
-    height: 158px;
-    border-radius: 5px;
-
-
-    &::placeholder {
-      width: 104px;
-      height: 24px;
-      margin-top: 100px;
-
-    }
-  }
-
-  .input-d-field {
-    width: 324px;
-    height: 68px;
-    background: #222224;
-    margin-bottom: 24px;
-    border-radius: 5px;
-  }
-
-  .input-b-field {
-    width: 324px;
-    height: 68px;
-    background: #222224;
-    border-radius: 5px;
-  }
+  margin: 27px 0 0 48px;
+  // flex-wrap: wrap;
 }
 
+.input-A-field {
+  background: #222224;
+  width: 424px;
+  height: 150px;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+.input-d-field{
+  margin-bottom: 15px;
+  width: 324px;
+  height: 68px;
+  background: #222224;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+.input-b-field {
+  width: 324px;
+  height: 68px;
+  background: #222224;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
 
 .details-Add-section {
-  margin-left: 30px;
+  margin: 20px 48px;
   padding: 20px;
   background-color: #111;
+  border-radius: 10px;
 }
 
 .grid-icons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
-  width: 611px;
-  height: 130px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .icon-item {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   background-color: #333;
   border: 1px solid #555;
-  border-radius: 2px;
+  border-radius: 5px;
   overflow: hidden;
-  height: 100%;
 }
 
 .icon-container {
@@ -157,9 +140,8 @@
   height: 45px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   color: white;
-  padding: 2px 10px;
+  padding: 0 10px;
 }
 
 .icon-container svg {
@@ -170,20 +152,16 @@
 .icon-label {
   font-size: 10px;
   font-weight: 500;
-  text-align: left;
 }
 
 .icon-select {
   width: 100%;
-  flex-grow: 1;
   background-color: #222;
   color: white;
   border: none;
   border-top: 1px solid #555;
   padding: 4px 8px;
   font-size: 10px;
-  height: auto;
-  text-align: center;
   appearance: none;
   background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' class='bi bi-caret-down-fill' viewBox='0 0 16 16'><path d='M7.247 11.14 2.451 5.658C2.105 5.27 2.36 4.5 2.98 4.5h10.04c.62 0 .875.77.53 1.158l-4.796 5.482a1 1 0 0 1-1.466 0z'/></svg>");
   background-repeat: no-repeat;
@@ -196,68 +174,70 @@
 }
 
 .section-title {
-  width: 872px;
-  height: 24px;
+  width: 100%;
   font-size: 20px;
   font-weight: 600;
-  margin-left: 48px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
+  margin: 20px 48px 10px;
+  color: white;
 }
-  
-.textarea-field{
-    width: 700px;
-    height: 68px;
-    margin-left: 48px;
-    background: #222224;
-    border-radius: 5px;
 
-
+.textarea-field {
+  width: calc(100% - 96px);
+  height: 100px;
+  margin: 0 48px;
+  background: #222224;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
 }
 
 .amenities-section {
-  width: 778px;
-  height: 97px;
-  margin-left: 48px;
-  margin-top: 20px;
-
-  .amenities-grid {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-  }
-
-  .amenity-label {
-    display: flex;
-    align-items: center;
-    gap: 5px; 
-    font-size: 14px;
-  }
-
-  .amenity-label input {
-    transform: scale(1.2);
-  }
+  width: calc(100% - 96px);
+  margin: 20px 48px;
 }
 
-.modal-Add-footer{
-  width: 526px;
-  height: 60px;
+.amenities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.amenity-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: white;
+}
+
+.amenity-label input {
+  transform: scale(1.2);
+}
+
+.modal-Add-footer {
+  width: 100%;
   display: flex;
   gap: 24px;
-  margin-left: 48px;
-  .btn-save{
-    background: #DC2215;
-    width: 251px;
-    height: 60px;
-    border-radius: 48px;
-  }
+  margin: 20px 48px;
+  justify-content: center;
+}
 
-  .btn-cancel{
-    background: #474747;
-    width: 251px;
-    height: 60px;
-    border-radius: 48px;
-  }
-  
+.btn-save,
+.btn-cancel {
+  width: 251px;
+  height: 45px;
+  border-radius: 48px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+}
+
+.btn-save {
+  background: #DC2215;
+}
+
+.btn-cancel {
+  background: #474747;
 }
