@@ -2,6 +2,7 @@ import React from 'react';
 import cardData from '../../shared/Card/card'; 
 import { FaTrash } from 'react-icons/fa'; 
 import { RiEditFill } from "react-icons/ri";
+import { Link } from "react-router-dom"
 
 
 function ManageProperties() {
@@ -16,9 +17,11 @@ function ManageProperties() {
       </div>
 
       <div className="flex justify-end mt-[56px]">
+        <Link to="/Add">
         <button className="bg-[#DC2215] px-[54px] py-[14px] m-auto rounded-[45px] text-white font-medium text-xl ml-[1154px] "> 
           Добавить
         </button>
+        </Link>
       </div>
 
       {cardData.map((property) => (
