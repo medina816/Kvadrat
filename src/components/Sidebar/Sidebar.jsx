@@ -19,12 +19,17 @@ const Sidebar = ({ isOpen }) => {
             <img src={arrowIcon} alt="arrow" />
           </li>
           <li>
-            <div className="second">
-              <img src={flatIcon} alt="flat" />
-              <h3>Объекты недвижимости</h3>
-            </div>
-            <img src={arrowIcon} alt="arrow" />
-          </li>
+            <div className='second'>
+            <img src={flatIcon}/>
+            <h3>
+            Обьекты недвижимости    
+            </h3>
+            </div> 
+            <Link to="/manageProperties" > 
+            <img src={arrowIcon}/> 
+            </Link>
+            </li>
+            {/* ---- */}
           <li>
             <div className="third">
               <img src={personIcon} alt="person" />

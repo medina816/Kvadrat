@@ -71,10 +71,10 @@ function PropertyCard({ item, bigImage  }) {
 </div>
 
 <div className={`flex items-center justify-between px-2 sm:px-4 lg:px-4 lg:justify-between lg:mr-[5px] ${bigImage ? 'mt-4' : 'lg:mt-2'}`}>
-  <p className={`font-semibold text-[#0A0200] ${bigImage ? 'text-[28px] font-normal ml-1 mt-7' : 'text-[8px] mt-2 sm:text-[10px] lg:text-lg'}`}> 
+  <p className={`font-semibold text-[#0A0200] ${bigImage ? 'text-[28px] font-normal ml-1 mt-7' : 'text-[8px] mt-1 sm:text-[10px] lg:text-lg'}`}> 
     Цена
   </p>
-  <span className={`font-semibold text-[#0A0200] ${bigImage ? 'text-[26px] font-normal mt-7' : 'text-[8px] mt-2 sm:text-[10px] lg:text-lg'}`}>
+  <span className={`font-semibold text-[#0A0200] ${bigImage ? 'text-[26px] font-normal mt-7' : 'text-[8px] mt-1 sm:text-[10px] lg:text-lg'}`}>
     {item.price}
   </span>
 </div>
@@ -85,8 +85,8 @@ function PropertyCard({ item, bigImage  }) {
   <button className={`
     bg-[#DC2215] text-white rounded-full transition hover:bg-red-700
     ${bigImage 
-      ? 'w-[346px] text-[23px] font-medium h-[66px] ml-4 mt-1  mb-2' 
-      : ' text-[9px] h-[22px] mt-1 mb-1 ml-[4px] w-[125px] lg:mb-4 sm:text-sm sm:h-[40px] lg:w-[257px] lg:text-xl lg:h-[50px]  lg:mt-[4px] lg:ml-[8px]'
+      ? 'w-[346px] text-[23px] font-medium h-[66px] ml-4 mt-5  mb-2' 
+      : ' text-[9px] h-[22px] mt-2 mb-1 ml-[4px] w-[125px] lg:mb-4 sm:text-sm sm:h-[40px] lg:w-[257px] lg:text-xl lg:h-[50px]  lg:mt-[14px] lg:ml-[8px]'
     }
   `}>
     Подробнее
