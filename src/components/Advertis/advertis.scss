@@ -1,6 +1,6 @@
 .advertis {
   .top-part {
-    width: 1440px;
+    width: 100%;
     background-color: rgb(154, 10, 0);
     height: 76px;
     display: flex;
@@ -8,10 +8,12 @@
     justify-content: space-between;
     padding: 0 16px;
     margin-bottom: 33px;
+    z-index: 100;
 
     .menu {
       font-size: 32px;
       cursor: pointer;
+      color: white;
     }
 
     .admin {
@@ -46,7 +48,7 @@
       }
     }
   }
-  
+
   .adds {
     width: 902px;
     margin: 0 auto 56px auto;
@@ -113,11 +115,12 @@
       }
 
       h1 {
-        color: #fff;
+        color: rgb(255, 255, 255);
         font-family: Manrope;
         font-size: 23.87px;
         font-weight: 700;
         line-height: 140%;
+        letter-spacing: 0%;
         text-align: left;
         position: absolute;
         width: 468.11px;
@@ -132,11 +135,12 @@
         height: 52px;
         left: 42.23px;
         bottom: 142px;
-        color: #fff;
+        color: rgb(255, 255, 255);
         font-family: Manrope;
         font-size: 18.36px;
         font-weight: 500;
         line-height: 140%;
+        letter-spacing: 0%;
         text-align: left;
       }
 
@@ -148,6 +152,13 @@
         left: 42px;
         bottom: 41px;
         justify-content: space-between;
+        color: rgb(255, 255, 255);
+font-family: Inter;
+font-size: 13.25px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: left;
 
         .btn1 {
           width: 288.05px;
@@ -189,12 +200,29 @@
     }
   }
 
-  // ⬇⬇ Добавляем плавное смещение ⬇⬇
   .main-content {
     transition: transform 0.3s ease;
   }
 
   .main-content.shifted {
-    transform: translateX(150px);
+    transform: translateX(300px);
   }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-wrapper {
+    position: relative;
+    z-index: 1000;
+  }
+  
 }
