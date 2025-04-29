@@ -8,6 +8,7 @@ import FAQ from "../../pages/FAQ/FAQ";
 import CardDetails from '../../pages/cardDetails/CardDetails';
 import AllProperties from '../../pages/AllProperties/AllProperties'
 import Advertis from "../../components/Advertis/Advertis";
+import Add from "../../pages/add/Add.jsx"
 
 export const myRouter = createBrowserRouter([
     {
@@ -24,6 +25,7 @@ export const myRouter = createBrowserRouter([
             {path: "properties", element: <AllProperties />},
             {path: "faq", element: <FAQ />},
             {path: "advertis", element: <Advertis/>},
+            {path: "Add", element: <Add/>},
         ],
     }
 ])

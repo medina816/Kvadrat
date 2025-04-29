@@ -5,7 +5,7 @@ import cardData from '../../shared/Card/card';
 import { FiChevronDown } from 'react-icons/fi';
 import PropertyCard from '../../shared/Card/PropertyCard';
 
-const AllProperties = () => {
+const AllProperties = () => { 
   const [filters, setFilters] = useState({
     location: '',
     types: [],
@@ -38,7 +38,7 @@ const AllProperties = () => {
   });
 
   return (
-    <div className=" bg-black text-white min-h-screen py-8 px-4  lg:px-12">
+    <div className="max-w-[1400px] m-auto bg-black text-white min-h-screen py-8 px-4  lg:px-12">
       <div className="flex flex-col lg:flex-row gap-8">
         <aside className="w-full  lg:w-[420px] bg-[#121212] p-6  rounded-md text-white space-y-6 h-fit mt-[66px] ">
           <h2 className="text-xl font-semibold tracking-wider uppercase border-b-2 border-[#444] w-max pb-4 mt-4">
@@ -92,13 +92,13 @@ const AllProperties = () => {
           <div className='max-w-[350px] border-t-2 border-[#444]'>
             <label className="text-lg font-semibold block mt-6 mb-3 ">Цена</label>
             <select
-              className="w-[214] h-[40px] rounded px-3 bg-[#303030] text-white border border-[#303030] "
+              className="w-[214] h-[40px] rounded px-3 bg-[#303030]  border border-[#303030] "
               value={filters.priceRange}
               onChange={(e) => setFilters({ ...filters, priceRange: e.target.value })}
             >
               <option value="">от Мин. – до Макс</option>
               <option value="$50k-$125k">$50k-$125k</option>
-            </select>
+            </select> 
           </div>
 
           <div className='max-w-[350px] border-t-2 border-[#444]'>
@@ -107,7 +107,7 @@ const AllProperties = () => {
               <Slider
                 range
                 min={500}
-                max={5000}
+                max={5000} 
                 step={100}
                 value={filters.areaRange}
                 onChange={(value) => setFilters({ ...filters, areaRange: value })}

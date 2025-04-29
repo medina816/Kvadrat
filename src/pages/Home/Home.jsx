@@ -19,6 +19,7 @@ function Home() {
       <Advantages />
       <FAQ />
       <Reviews />
+      
     </div>
   )
 }
