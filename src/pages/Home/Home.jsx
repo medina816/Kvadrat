@@ -11,9 +11,9 @@ import Reviews from './FAQ/Reviews/Reviews.jsx'
 function Home() {
   return (
     <div>
-<div className="banner-full">
-  <Banner />
-</div>
+      <div className="banner-full">
+        <Banner />
+      </div>
       <BlockService />
       <Card /> 
       <Advantages />
