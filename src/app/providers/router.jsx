@@ -10,6 +10,7 @@ import AllProperties from '../../pages/AllProperties/AllProperties'
 import Advertis from "../../components/Advertis/Advertis";
 import ManageProperties from '../../pages/ManageProperties/ManageProperties'
 import Add from "../../pages/add/Add.jsx"
+import LoginForm from "../../shared/LoginForm/LoginForm.jsx";
 
 export const myRouter = createBrowserRouter([
     {
@@ -28,6 +29,7 @@ export const myRouter = createBrowserRouter([
             {path: "advertis", element: <Advertis/>}, 
             {path: "manageProperties", element: <ManageProperties/>}, 
             {path: "Add", element: <Add/>},
+            {path: "login", element: <LoginForm/>},
         ],
     }
 ])
