@@ -1,23 +1,21 @@
 .header-bg {
   background-color: #C8180C;
-  position: relative;
- 
+  position: relative;  
+  
 }
 
 .header {
-//  height: 94px;
+  position: fixed;
+  background-color: #C8180C;
   width: 100%;
-  // width: 1440px;
   margin: auto;
   display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  position: relative;
-  // z-index: 1000;
+  // position: relative;
+  z-index: 1000;  
 
   .hed-kv {
     h2 {

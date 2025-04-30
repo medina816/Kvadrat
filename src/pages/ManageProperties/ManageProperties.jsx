@@ -1,11 +1,15 @@
-import React from 'react';
-import cardData from '../../shared/Card/card'; 
-import { FaTrash } from 'react-icons/fa'; 
+import React, { useState } from 'react';
+import cardData from '../../shared/Card/card';
+import { FaTrash } from 'react-icons/fa';
 import { RiEditFill } from "react-icons/ri";
-import { Link } from "react-router-dom"
-
+import Add from "../../pages/add/Add.jsx"; // модал компонентин импорт кылуу
 
 function ManageProperties() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className=" w-[967px] mt-[88px] m-auto bg-black text-white ">
       <div className="grid grid-cols-5 w-[950px]  gap-[118px] px-[11px]	 py-[14px] bg-[#222224] rounded-[4px] text-xl font-medium ">
@@ -17,11 +21,12 @@ function ManageProperties() {
       </div>
 
       <div className="flex justify-end mt-[56px]">
-        <Link to="/Add">
-        <button className="bg-[#DC2215] px-[54px] py-[14px] m-auto rounded-[45px] text-white font-medium text-xl ml-[1154px] "> 
+        <button
+          className="bg-[#DC2215] px-[54px] py-[14px] rounded-[45px] text-white font-medium text-xl ml-[1154px]"
+          onClick={openModal}
+        >
           Добавить
         </button>
-        </Link>
       </div>
 
       {cardData.map((property) => (
@@ -37,12 +42,13 @@ function ManageProperties() {
             />
           </div>
 
-          <div className="">
+          <div>
             <p className='text-[18px] font-medium w-[209px] h-[44px] ml-4 '>{property.title}</p>
           </div>
-												<div className='w-[208px] h-[18px] m-auto ml-[45px] text-slate-200'>  
+
+          <div className='w-[208px] h-[18px] m-auto ml-[45px] text-slate-200'>
             <p className="text-[16px] font-normal">Площадь: {property.area}</p>
-												</div>
+          </div>
 
           <div className="text-xl ml-[143px] font-semibold text-[#FFFFFF]">12млн.$</div>
 
@@ -56,6 +62,9 @@ function ManageProperties() {
           </div>
         </div>
       ))}
+
+      {/* Модалды ушул жерде чакырабыз */}
+      <Add isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

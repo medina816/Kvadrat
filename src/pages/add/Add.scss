@@ -6,7 +6,7 @@
 .modal-Add {
   position: fixed;
   inset: 0;
-  border: 1px solid red;
+  // border: 1px solid red;
   inset: 0; 
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -25,18 +25,18 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    // border: 1px solid red;
   }
 }
 
 .g-container {
   width: 967px;
   width: 100%;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .modal-Add-s {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   margin-left: 284px;
   width: 872px;
   height: 80px;
