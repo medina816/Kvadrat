@@ -10,12 +10,22 @@ import AllProperties from '../../pages/AllProperties/AllProperties'
 import Advertis from "../../components/Advertis/Advertis";
 import ManageProperties from '../../pages/ManageProperties/ManageProperties'
 import Add from "../../pages/add/Add.jsx"
+import LoginForm from '../../shared/LoginForm/LoginForm.jsx'
+import RegisterForm from '../../shared/RegisterForm/RegisterForm.jsx'
 
-export const myRouter = createBrowserRouter([
+export const myRouter = createBrowserRouter([  
+    {  
+        path: "/register", 
+        element: <RegisterForm />,    
+    },
+    { 
+        path: "/login", 
+        element: <LoginForm />, 
+      }, 
+
     {
         path: "/",
-        element: <Layout />,
-       
+        element: <Layout />, 
 
         children: [
             { path: "/", element: <Home /> },
@@ -27,7 +37,7 @@ export const myRouter = createBrowserRouter([
             {path: "faq", element: <FAQ />},
             {path: "advertis", element: <Advertis/>}, 
             {path: "manageProperties", element: <ManageProperties/>}, 
-            {path: "Add", element: <Add/>},
+            {path: "Add", element: <Add/>}, 
         ],
     }
 ])
