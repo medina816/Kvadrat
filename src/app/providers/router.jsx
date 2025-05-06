@@ -36,9 +36,11 @@ export const myRouter = createBrowserRouter([
             {path: "properties", element: <AllProperties />},
             {path: "faq", element: <FAQ />},
             {path: "advertis", element: <Advertis/>}, 
-            {path: "manageProperties", element: <ManageProperties/>,
+            {path: "manageProperties", element: <ManageProperties/>}, 
             {path: "Add", element: <Add/>},
             {path: "login", element: <LoginForm/>},
             {path: "Add", element: <Add/>}, 
+        ],
     }
+])
 export default myRouter
