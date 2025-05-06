@@ -64,7 +64,7 @@ function PropertyCard({ bigImage }) {
           </span>
         </div>
 
-        <Link to={`/CardDetails`}>
+        <Link to={`/cardDetails/${property.id}`}>
           <button className={`bg-[#DC2215] text-white rounded-full transition hover:bg-red-700
             ${bigImage
               ? 'w-[346px] text-[23px] font-medium h-[66px] ml-4 mt-5  mb-2'
