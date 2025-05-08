@@ -10,7 +10,7 @@ function PropertyCard({ bigImage }) {
   if (isLoading) return <div>Загрузка...</div>;
   if (error) return <div>Ошибка загрузки</div>;
 
-  const property = data[0]; // пока просто берем первый объект из массива
+  const property = data[0]; 
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % property.images.length);

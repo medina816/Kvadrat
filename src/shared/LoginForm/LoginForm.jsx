@@ -17,7 +17,7 @@ const LoginForm = () => {
     try {
       const res = await login({ email, password }).unwrap();
       localStorage.setItem("token", res.token);
-      navigate("/");
+      navigate("/admin");
     } catch (err) {
       console.error("Login failed:", err);
     } };

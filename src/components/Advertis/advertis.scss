@@ -201,12 +201,12 @@ text-align: left;
   }
 
   .main-content {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease;                                        
   }
 
   .main-content.shifted {
     transform: translateX(300px);
-  }
+  }                                        
   .modal-overlay {
     position: fixed;
     top: 0;

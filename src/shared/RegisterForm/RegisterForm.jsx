@@ -44,7 +44,7 @@ const RegisterForm = () => {
             <input
               type="password"
               required
-              value={password}
+              value={password} 
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 rounded-md bg-white text-black"
               placeholder="********"

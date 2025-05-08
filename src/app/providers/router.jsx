@@ -14,6 +14,11 @@ import LoginForm from '../../shared/LoginForm/LoginForm.jsx'
 import RegisterForm from '../../shared/RegisterForm/RegisterForm.jsx'
 
 export const myRouter = createBrowserRouter([  
+
+
+    {path: "/admin", element: <Advertis/>}, 
+    {path: "manageProperties", element: <ManageProperties/>}, 
+
     {  
         path: "/register", 
         element: <RegisterForm />,    
@@ -34,9 +39,7 @@ export const myRouter = createBrowserRouter([
             { path: "buy-house", element: <BuyHouse /> },
             { path: "cardDetails/:id", element: <CardDetails /> },
             {path: "properties", element: <AllProperties />},
-            {path: "faq", element: <FAQ />},
-            {path: "advertis", element: <Advertis/>}, 
-            {path: "manageProperties", element: <ManageProperties/>}, 
+            {path: "faq", element: <FAQ />}, 
             {path: "Add", element: <Add/>}, 
         ],
     }
