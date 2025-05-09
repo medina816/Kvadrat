@@ -21,7 +21,7 @@ const LoginForm = () => {
     } catch (err) {
       console.error("Login failed:", err);
     } };
-
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white px-4">
       <div className="bg-zinc-900 rounded-xl shadow-lg p-6 sm:p-8 w-full max-w-md">

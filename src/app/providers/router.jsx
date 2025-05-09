@@ -8,16 +8,24 @@ import FAQ from "../../pages/FAQ/FAQ";
 import CardDetails from '../../pages/cardDetails/CardDetails';
 import AllProperties from '../../pages/AllProperties/AllProperties'
 import Advertis from "../../components/Advertis/Advertis";
-import ManageProperties from '../../pages/ManageProperties/ManageProperties'
 import Add from "../../pages/add/Add.jsx"
 import LoginForm from '../../shared/LoginForm/LoginForm.jsx'
 import RegisterForm from '../../shared/RegisterForm/RegisterForm.jsx'
+import AdBlock from '../../components/AdBlock/AdBlock.jsx' 
+import ManageProperties from '../../pages/ManageProperties/ManageProperties.jsx';
 
 export const myRouter = createBrowserRouter([  
 
-
-    {path: "/admin", element: <Advertis/>}, 
-    {path: "manageProperties", element: <ManageProperties/>}, 
+    {
+        path: "/admin",
+        element: <Advertis />, 
+        children: [
+          { path: "properties", element: <ManageProperties /> },
+          { path: "profile", element: <AdBlock /> },
+          { path: "add", element: <Add /> },
+        ],
+      },
+      
 
     {  
         path: "/register", 
@@ -32,7 +40,7 @@ export const myRouter = createBrowserRouter([
         path: "/",
         element: <Layout />, 
 
-        children: [
+        children: [ 
             { path: "/", element: <Home /> },
             { path: "about", element: <About /> },
             { path: "service", element: <Service /> },

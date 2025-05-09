@@ -18,7 +18,8 @@
 
     .admin {
       display: flex;
-      align-items: center;
+      align-items: center;  
+      margin-right: 100px;
 
       img {
         width: 45px;
@@ -205,7 +206,7 @@ text-align: left;
   }
 
   .main-content.shifted {
-    transform: translateX(300px);
+    margin-left: 300px;
   }                                        
   .modal-overlay {
     position: fixed;
