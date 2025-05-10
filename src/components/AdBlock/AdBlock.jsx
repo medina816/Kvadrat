@@ -10,7 +10,7 @@ import '../Advertis/advertis.scss'
 
 function AdBlock() {
   return (
-    <div className='block1'>
+    <div className='block1'> 
       <img src={big}/>
       <h1>АГЕНТСТВО НЕДВИЖИМОСТИ В БИШКЕКЕ</h1>
       <p>lorem ipsum dolor aset logo plrofisran whist the natury jast mkl welll you tell week on the datch</p>

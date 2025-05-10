@@ -33,7 +33,7 @@ const Header = () => {
       <div className="hed-words">
         <Link to="/" className="nav-link" onClick={closeMenu}>Главная</Link>
         <Link to="/properties" className="nav-link" onClick={closeMenu}>Купить недвижимость</Link>
-        <Link to="/advertis" className="nav-link" onClick={closeMenu}>Услуги</Link>
+        <Link to="/service" className="nav-link" onClick={closeMenu}>Услуги</Link>
         <Link to="/about" className="nav-link" onClick={closeMenu}>О компании</Link>
         <Link to="/faq" className="nav-link" onClick={closeMenu}>FAQ</Link>
       </div>
