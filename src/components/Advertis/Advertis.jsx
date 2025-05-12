@@ -1,21 +1,44 @@
 import React, { useState } from 'react';
 import './advertis.scss';
-import { IoMenu } from "react-icons/io5";
+import { IoMenu } from 'react-icons/io5';
 import admin from '../../assets/images/admin.png';
-import AdBlock from '../AdBlock/AdBlock';
 import Sidebar from '../Sidebar/Sidebar';
+import AdBlock from '../AdBlock/AdBlock'; 
 import ModalPage from '../ModalPage/ModalPage';
+import ManageProperties from '../../pages/ManageProperties/ManageProperties';
 
 function Advertis() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activePage, setActivePage] = useState('home');
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
+  const renderContent = () => {
+    switch (activePage) {
+      case 'manage':
+        return <ManageProperties />;
+      case 'profile':
+        return (
+          <div className="info">
+            {[...Array(5)].map((_, index) => (
+              <AdBlock key={index} toggleModal={toggleModal} />
+            ))}
+          </div>
+        );
+      default:
+        return <div>Добро пожаловать</div>;
+    }
+  };
+
   return (
     <div className="advertis">
-      <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+      <Sidebar
+        isOpen={isSidebarOpen}
+        setActivePage={setActivePage}
+        activePage={activePage}
+      />
 
       {isModalOpen && (
         <div className="modal-overlay" onClick={toggleModal}>
@@ -38,16 +61,7 @@ function Advertis() {
         </div>
 
         <div className="container content-container">
-          <div className="adds">
-            <h2>Мои объявления</h2>
-            <button onClick={toggleModal}>Добавить новое объявление</button>
-          </div>
-
-          <div className="info">
-            {[...Array(5)].map((_, index) => (
-              <AdBlock key={index} />
-            ))}
-          </div>
+          {renderContent()}
         </div>
       </div>
     </div>
