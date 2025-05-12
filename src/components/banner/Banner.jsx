@@ -20,7 +20,6 @@ function Banner() {
   const [navigationReady, setNavigationReady] = useState(false);
 
   useEffect(() => {
-    // Задержка для обеспечения рендера кнопок до инициализации Swiper
     setNavigationReady(true);
   }, []);
 
@@ -32,7 +31,6 @@ function Banner() {
       {navigationReady && (
         <Swiper
           modules={[Navigation]}
-          // loop={true}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
@@ -80,7 +78,6 @@ function Banner() {
             </SwiperSlide>
           ))}
 
-          {/* Кастомные стрелки */}
           <div ref={prevRef} className="swiper-button-prev">
             <FaArrowLeft />
           </div>
