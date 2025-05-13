@@ -6,6 +6,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import AdBlock from '../AdBlock/AdBlock'; 
 import ModalPage from '../ModalPage/ModalPage';
 import ManageProperties from '../../pages/ManageProperties/ManageProperties';
+import ManeAdminChart from  '../../components/ManeAdmin/ManeAdmin'
 
 function Advertis() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -28,7 +29,9 @@ function Advertis() {
           </div>
         );
       default:
-        return <div>Добро пожаловать</div>;
+        return <div>
+          <ManeAdminChart/>
+        </div>;
     }
   };
 
