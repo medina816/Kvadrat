@@ -13,6 +13,7 @@ import LoginForm from '../../shared/LoginForm/LoginForm.jsx'
 import RegisterForm from '../../shared/RegisterForm/RegisterForm.jsx'
 import AdBlock from '../../components/AdBlock/AdBlock.jsx' 
 import ManageProperties from '../../pages/ManageProperties/ManageProperties.jsx';
+import ManeAdmin from "../../components/ManeAdmin/ManeAdmin.jsx";
 
 export const myRouter = createBrowserRouter([  
 
@@ -20,9 +21,11 @@ export const myRouter = createBrowserRouter([
         path: "/admin",
         element: <Advertis />, 
         children: [
+          { path: "maneadmin", element: <ManeAdmin /> },
           { path: "properties", element: <ManageProperties /> },
           { path: "profile", element: <AdBlock /> },
           { path: "add", element: <Add /> },
+          
         ],
       },
       
