@@ -1,23 +1,63 @@
-// components/AddModal.jsx
 import React, { useState } from "react";
-import { FaPhotoVideo, FaBed, FaBath, FaRulerCombined, FaCalendarAlt, FaCouch, FaUtensils, FaHome, FaWarehouse } from "react-icons/fa";
+import {
+  FaPhotoVideo, FaBed, FaBath, FaRulerCombined, FaCalendarAlt,
+  FaCouch, FaUtensils, FaHome, FaWarehouse
+} from "react-icons/fa";
+import { useCreateProductMutation } from '../../app/services/productsApi'; 
 import './Add.scss';
 
 const Add = ({ isOpen, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [createListing, { isLoading }] = useCreateProductMutation();
 
-  const saveCard = () => {
+  const saveCard = async () => {
     const title = document.querySelector('.input-A-field').value;
     const area = document.querySelector('.input-d-field').value;
     const price = document.querySelector('.input-b-field').value;
+    const description = document.querySelector('.textarea-field').value;
 
     if (!title || !area || !price) {
       alert('Заполните все поля!');
       return;
     }
 
-    alert('Сохранено успешно!');
-    onClose();
+    const details = Array.from(document.querySelectorAll('.icon-select')).map(select => select.value);
+    const amenities = Array.from(document.querySelectorAll('.amenities-section input[type="checkbox"]'))
+      .map((input, i) => ({
+        label: input.nextSibling.textContent.trim(),
+        checked: input.checked,
+      }));
+
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('area', area);
+    formData.append('price', price);
+    formData.append('description', description);
+
+    if (selectedImage) {
+      formData.append('image', selectedImage);
+    }
+
+    // Детали
+    formData.append('rooms', details[0]);
+    formData.append('baths', details[1]);
+    formData.append('sqft', details[2]);
+    formData.append('yearBuilt', details[3]);
+    formData.append('bedroom', details[4]);
+    formData.append('kitchen', details[5]);
+    formData.append('type', details[6]);
+    formData.append('garage', details[7]);
+
+    // Удобства
+    formData.append('amenities', JSON.stringify(amenities));
+
+    try {
+      await createListing(formData).unwrap();
+      alert('Сохранено успешно!');
+      onClose();
+    } catch (error) {
+       alert('Произошла ошибка при сохранении.');
+    }
   };
 
   if (!isOpen) return null;
@@ -109,7 +149,9 @@ const Add = ({ isOpen, onClose }) => {
             </div>
           </div>
           <div className="modal-Add-footer">
-            <button onClick={saveCard} className="btn-save">Сохранить</button>
+            <button onClick={saveCard} className="btn-save" disabled={isLoading}>
+              {isLoading ? 'Сохраняем...' : 'Сохранить'}
+            </button>
             <button onClick={onClose} className="btn-cancel">Отмена</button>
           </div>
         </div>
