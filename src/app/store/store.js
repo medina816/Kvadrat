@@ -3,7 +3,7 @@ import { bannerApi } from '../services/bannerApi';
 import { productsApi } from '../services/productsApi';
 import { allPropertiesApi } from '../services/AllPropertiesApi';
 import { authApi } from '../../features/auth/authApi';
-import { ManeAdmin } from '../services/ManeAdmin'; 
+import { maneAdmin } from '../services/ManeAdmin'; 
 
 const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ const store = configureStore({
     [productsApi.reducerPath]: productsApi.reducer,
     [allPropertiesApi.reducerPath]: allPropertiesApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
-    [ManeAdmin.reducerPath]: ManeAdmin.reducer,
+    [maneAdmin.reducerPath]: maneAdmin.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -19,7 +19,7 @@ const store = configureStore({
       productsApi.middleware,
       allPropertiesApi.middleware,
       authApi.middleware,
-      ManeAdmin.middleware
+      maneAdmin.middleware
     ),
 });
 

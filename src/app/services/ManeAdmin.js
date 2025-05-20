@@ -1,19 +1,22 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const ManeAdmin = createApi({
-  reducerPath: 'ManeAdmin',
+export const maneAdmin = createApi({
+  reducerPath: 'maneAdminApi',
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_API_URL,
+    prepareHeaders: (headers) => {
+      headers.set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+      return headers;
+    }
   }),
   endpoints: (builder) => ({
-    getVisits: builder.query({
+    getMetrics: builder.query({
       query: ({ startDate, endDate }) => ({
-        url: '/metrics',
-        method: 'GET',
+        url: 'metrics',
         params: { startDate, endDate },
       }),
     }),
   }),
 });
 
-export const { useGetVisitsQuery } = ManeAdmin;
+export const { useGetMetricsQuery } = maneAdmin;
