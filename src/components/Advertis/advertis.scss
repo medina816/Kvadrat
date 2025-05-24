@@ -224,6 +224,42 @@ text-align: left;
   .modal-wrapper {
     position: relative;
     z-index: 1000;
+  } 
+   .adds {
+    width: 902px;
+    margin: 0 auto 56px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      color: rgb(255, 255, 255);
+      font-family: Manrope;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 140%;
+      text-align: left;
+    }
+
+    button {
+      width: 330px;
+      height: 56px;
+      border-radius: 39px;
+      background: rgb(200, 24, 12);
+      color: rgb(255, 255, 255);
+      font-family: Manrope;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 140%;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: rgb(180, 20, 10);
+      }
+    }
   }
   
 }
