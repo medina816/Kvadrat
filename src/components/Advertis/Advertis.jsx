@@ -4,9 +4,8 @@ import { IoMenu } from 'react-icons/io5';
 import admin from '../../assets/images/admin.png';
 import Sidebar from '../Sidebar/Sidebar';
 import AdBlock from '../AdBlock/AdBlock'; 
-import ModalPage from '../ModalPage/ModalPage';
-import ManageProperties from '../../pages/ManageProperties/ManageProperties';
-import ManeAdminChart from  '../../components/ManeAdmin/ManeAdmin'
+import ModalPage from '../modalPage/ModalPage'; 
+import ManageProperties from '../../pages/ManageProperties/ManageProperties' 
 
 function Advertis() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,20 +17,24 @@ function Advertis() {
 
   const renderContent = () => {
     switch (activePage) {
-      case 'manage':
-        return <ManageProperties />;
       case 'profile':
         return (
-          <div className="info">
-            {[...Array(5)].map((_, index) => (
-              <AdBlock key={index} toggleModal={toggleModal} />
-            ))}
+          <div className="profile-section">
+            <div className="adds">
+              <h2>Мои объявления</h2>
+              <button onClick={toggleModal}>Добавить новое объявление</button>
+            </div>
+            <div className="info">
+              {[...Array(5)].map((_, index) => (
+                <AdBlock key={index} toggleModal={toggleModal} />
+              ))}
+            </div>
           </div>
         );
+      case 'manage':
+        return <ManageProperties />;
       default:
-        return <div>
-          <ManeAdminChart/>
-        </div>;
+        return <p>Добро пожаловать!</p>;
     }
   };
 
