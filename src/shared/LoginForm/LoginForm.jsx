@@ -17,8 +17,8 @@ const LoginForm = () => {
     try {
       const res = await login({ email, password }).unwrap();
       if (res?.token) {
-        localStorage.setItem("token", res.token); // сохраняем токен
-        navigate("/admin"); // переход в админку
+        localStorage.setItem("token", res.token); 
+        navigate("/admin");
       } else {
         alert("Не удалось получить токен от сервера.");
       }

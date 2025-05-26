@@ -1,138 +1,190 @@
 .modalka {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .close-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .inside {
     width: 922.82px;
     height: 656px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: rgb(34, 34, 36);
+    background: #222224;
     border-radius: 10px;
-  
-    .close-icon {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      z-index: 1001;
-    }
-  
-    .arrow1, .arrow2 {
-      width: 36.61px;
-      height: 36.61px;
-      color: white;
-    }
-  
-    .inside {
-      gap: 101px;
-      width: 849px;
-      height: 656px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 101px;
+    padding: 40px;
+
+    .top {
+      width: 735.71px;
+      height: 207.45px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-  
-      .top {
-        width: 735.71px;
-        height: 207.45px;
+
+      .top-text {
+        width: 356.71px;
         display: flex;
-  
-        .top-text {
-          width: 356.71px;
-          display: flex;
-          align-items: center;
-  
-          h2 {
-            color: #fff;
-            font-family: Manrope;
-            font-size: 28.87px;
-            font-weight: 600;
-          }
-        }
-  
-        .top-icon {
-          width: 356.71px;
-          border-radius: 4.61px;
-          background: rgb(19, 19, 19);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-  
-      .bottom {
-        width: 737.6px;
-        height: 234.09px;
-  
-        h3 {
+        align-items: center;
+
+        h2 {
           color: #fff;
-          font-family: Manrope;
-          font-size: 24.8px;
+          font-family: 'Manrope', sans-serif;
+          font-size: 28.87px;
           font-weight: 600;
         }
-  
-        .blocks {
-          height: 174.09px;
+      }
+
+      .top-icon {
+        width: 356.71px;
+        height: 100%;
+        border-radius: 4.61px;
+        background: #131313;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 150px;
+          height: auto;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+
+        h2 {
+          color: #fff;
+          font-size: 15.25px;
+          text-align: center;
+        }
+      }
+    }
+
+    .bottom {
+      width: 737.6px;
+      height: 234.09px;
+
+      h3 {
+        color: #fff;
+        font-family: 'Manrope', sans-serif;
+        font-size: 24.8px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .blocks {
+        height: 174.09px;
+        display: flex;
+        justify-content: space-between;
+
+        .left {
           display: flex;
-          justify-content: space-between;
-  
-          .left {
-            display: flex;
-            flex-direction: column;
-            gap: 37px;
-            align-items: center;
-            width: 354.23px;
-  
-            .top-left {
-              width: 354.23px;
-              height: 81.85px;
-              background: rgb(19, 19, 19);
-              display: flex;
-              align-items: center;
-              padding-left: 20px;
-              color: #b3b3b3;
-              border-radius: 4.61px;
-              font-size: 18.44px;
+          flex-direction: column;
+          gap: 18px;
+          align-items: center;
+          width: 354.23px;
+
+          input,
+          textarea {
+            width: 100%;
+            background: #131313;
+            border-radius: 4.61px;
+            padding: 12px 20px;
+            color: #b3b3b3;
+            font-size: 16px;
+            border: none;
+            resize: none;
+          }
+
+          textarea {
+            height: 80px;
+          }
+
+          .btn1 {
+            width: 313.15px;
+            height: 53.66px;
+            border-radius: 47.25px;
+            border: none;
+            background: #c8180c;
+            color: white;
+            font-size: 18.44px;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+              background: #a3140a;
             }
-  
-            .btn1 {
-              width: 313.15px;
-              height: 53.66px;
-              border-radius: 47.25px;
-              border: none;
-              background: rgb(200, 24, 12);
-              color: white;
-              font-size: 18.44px;
+
+            &:disabled {
+              background: #888;
+              cursor: not-allowed;
             }
           }
-  
-          .right {
+        }
+
+        .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 17px;
+          width: 354.23px;
+
+          .upload-button {
+            width: 275.19px;
+            height: 45.65px;
+            border-radius: 28.09px;
+            color: white;
+            background: #c8180c;
+            font-size: 18.06px;
+            font-weight: 600;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 17px;
-  
-            button {
-              width: 275.19px;
-              height: 45.65px;
-              border-radius: 28.09px;
-              color: white;
-              background: rgb(200, 24, 12);
-              font-size: 18.06px;
-              font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+              background: #a3140a;
             }
-  
-            h2 {
-              width: 306px;
-              font-size: 15.25px;
-              color: white;
-              text-align: center;
+
+            input {
+              display: none;
             }
+          }
+
+          .preview-image {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+          }
+
+          h2 {
+            width: 306px;
+            font-size: 15.25px;
+            color: white;
+            text-align: center;
           }
         }
       }
     }
   }
-  
+}

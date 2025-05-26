@@ -1,48 +1,43 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const bannerApi = createApi({
   reducerPath: 'bannerApi',
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_API_URL,
+    prepareHeaders: (headers) => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        headers.set('Authorization', `Bearer ${token}`);
+      }
+      return headers;
+    },
   }),
+  tagTypes: ['Banners'],
   endpoints: (builder) => ({
     getBanners: builder.query({
-      query: () => 'banners',
-      
+      query: () => '/banners',
+      providesTags: ['Banners'],
     }),
-
-    getBannerById: builder.query({
-      query: (id) => `banners/${id}`,
-    }),
-
     createBanner: builder.mutation({
-      query: (formData) => ({
-        url: 'banners',
+      query: (newBanner) => ({
+        url: '/banners',
         method: 'POST',
-        body: formData,
+        body: newBanner,
       }),
+      invalidatesTags: ['Banners'],
     }),
-
-    updateBanner: builder.mutation({
-      query: ({ id, formData }) => ({
-        url: `banners/${id}`,
-        method: 'PUT',
-        body: formData,
-      }),
-    }),
-
     deleteBanner: builder.mutation({
       query: (id) => ({
-        url: `banners/${id}`,
+        url: `/banners/${id}`,
         method: 'DELETE',
       }),
+      invalidatesTags: ['Banners'],
     }),
   }),
 });
+
 export const {
-    useGetBannersQuery,
-    useGetBannerByIdQuery,
-    useCreateBannerMutation,
-    useUpdateBannerMutation,
-    useDeleteBannerMutation,
-  } = bannerApi;  
+  useGetBannersQuery,
+  useCreateBannerMutation,
+  useDeleteBannerMutation,
+} = bannerApi;

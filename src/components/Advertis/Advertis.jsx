@@ -3,9 +3,10 @@ import './advertis.scss';
 import { IoMenu } from 'react-icons/io5';
 import admin from '../../assets/images/admin.png';
 import Sidebar from '../Sidebar/Sidebar';
-import AdBlock from '../AdBlock/AdBlock'; 
-import ModalPage from '../modalPage/ModalPage'; 
-import ManageProperties from '../../pages/ManageProperties/ManageProperties' 
+import ModalPage from '../modalPage/ModalPage';
+import ManageProperties from '../../pages/ManageProperties/ManageProperties';
+import ManeAdminMetric from '../ManeAdmin/ManeAdmin';
+import BannerList from '../BannerList/BannerList.jsx'; 
 
 function Advertis() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,17 +25,16 @@ function Advertis() {
               <h2>Мои объявления</h2>
               <button onClick={toggleModal}>Добавить новое объявление</button>
             </div>
+
             <div className="info">
-              {[...Array(5)].map((_, index) => (
-                <AdBlock key={index} toggleModal={toggleModal} />
-              ))}
+              <BannerList />
             </div>
           </div>
         );
       case 'manage':
         return <ManageProperties />;
       default:
-        return <p>Добро пожаловать!</p>;
+        return <ManeAdminMetric />;
     }
   };
 
