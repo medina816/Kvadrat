@@ -1,4 +1,4 @@
- import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const bannerApi = createApi({
   reducerPath: 'bannerApi',
@@ -19,10 +19,18 @@ export const bannerApi = createApi({
       providesTags: ['Banners'],
     }),
     createBanner: builder.mutation({
-      query: (newBanner) => ({
+      query: (formData) => ({
         url: '/banners',
         method: 'POST',
-        body: newBanner,
+        body: formData,
+      }),
+      invalidatesTags: ['Banners'],
+    }),
+    updateBanner: builder.mutation({
+      query: ({ id, formData }) => ({
+        url: `/banners/${id}`,
+        method: 'PUT',
+        body: formData,
       }),
       invalidatesTags: ['Banners'],
     }),
@@ -39,5 +47,6 @@ export const bannerApi = createApi({
 export const {
   useGetBannersQuery,
   useCreateBannerMutation,
+  useUpdateBannerMutation,
   useDeleteBannerMutation,
 } = bannerApi;
