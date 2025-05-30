@@ -1,41 +1,27 @@
-     import React, { useEffect, useState } from "react";
-import AdBlock from "./AdBlock";
+import React from "react";
+import {
+  useGetBannersQuery,
+  useDeleteBannerMutation,
+} from "../../app/services/bannerApi";
+import AdBlock from "../AdBlock/AdBlock.jsx";
 
 function Dashboard() {
-  const [banners, setBanners] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: banners, isLoading, isError } = useGetBannersQuery();
+  const [deleteBanner] = useDeleteBannerMutation();
 
-  useEffect(() => {
-    fetch("/api/banners")
-      .then((res) => {
-        if (!res.ok) throw new Error("Ошибка при загрузке баннеров");
-        return res.json();
-      })
-      .then((data) => {
-        setBanners(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  const handleDelete = (id) => {
-    fetch(`/api/banners/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("Ошибка при удалении");
-        setBanners((prev) => prev.filter((banner) => banner.id !== id));
-      })
-      .catch((err) => alert(err.message));
+  const handleDelete = async (id) => {
+    try {
+      console.log("Удаление баннера с id:", id);
+      await deleteBanner(id).unwrap();
+    } catch (err) {
+      console.error("Ошибка при удалении баннера:", err);
+      alert("Не удалось удалить баннер. Попробуйте ещё раз.");
+    }
   };
 
-  if (loading) return <p>Загрузка...</p>;
-  if (error) return <p className="text-red-600">Ошибка: {error}</p>;
-  if (!banners.length) return <p>Баннеры отсутствуют.</p>;
+  if (isLoading) return <p>Загрузка баннеров...</p>;
+  if (isError) return <p className="text-red-600">Ошибка при загрузке баннеров</p>;
+  if (!banners?.length) return <p>Баннеры отсутствуют.</p>;
 
   return (
     <div className="dashboard p-6">
@@ -47,4 +33,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;  
+export default Dashboard;
