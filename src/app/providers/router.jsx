@@ -14,6 +14,7 @@ import RegisterForm from '../../shared/RegisterForm/RegisterForm.jsx'
 import AdBlock from '../../components/AdBlock/AdBlock.jsx' 
 import ManageProperties from '../../pages/ManageProperties/ManageProperties.jsx';
 import ManeAdmin from "../../components/ManeAdmin/ManeAdmin.jsx";
+import AllCards from '../../pages/AllCards/AllCards.jsx'
 
 export const myRouter = createBrowserRouter([  
 
@@ -54,7 +55,8 @@ export const myRouter = createBrowserRouter([
             {path: "advertis", element: <Advertis/>}, 
             {path: "manageProperties", element: <ManageProperties/>}, 
             {path: "Add", element: <Add/>},
-            {path: "login", element: <LoginForm/>},
+            {path: "login", element: <LoginForm/>}, 
+            {path: "Allcards", element: <AllCards/>}, 
         ],
     }
 ])

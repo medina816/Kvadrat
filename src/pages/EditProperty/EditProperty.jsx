@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useCreateProductMutation } from '../../app/services/productsApi';
+import React, { useEffect, useState } from 'react';
+import { useUpdateProductMutation } from '../../app/services/productsApi';
 import { IoClose } from 'react-icons/io5';
 import { FaBed, FaBath, FaRulerCombined, FaCalendarAlt, FaUtensils, FaCar, FaBuilding, FaCamera } from 'react-icons/fa';
 import '../add/Add.scss';
@@ -10,7 +10,7 @@ const AMENITIES = [
   'Бассейн', 'Клубный дом', 'Гаражи',
 ];
 
-const Add = ({ isOpen, onClose }) => {
+const EditProperty = ({ isOpen, onClose, editData }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [formState, setFormState] = useState({
     title: '',
@@ -23,19 +23,30 @@ const Add = ({ isOpen, onClose }) => {
 
   const [remainder, setRemainder] = useState({ message: '', type: '' });
 
-  const [createListing] = useCreateProductMutation();
+  const [updateListing] = useUpdateProductMutation();
 
-  const resetForm = () => {
-    setFormState({
-      title: '',
-      area: '',
-      price: '',
-      description: '',
-      details: Array(8).fill(0),
-      amenities: [],
-    });
-    setSelectedImage(null);
-  };
+  useEffect(() => {
+    if (editData) {
+      setFormState({
+        title: editData.title || '',
+        area: editData.area || '',
+        price: editData.price || '',
+        description: editData.description || '',
+        details: [
+          editData.rooms || 0,
+          editData.baths || 0,
+          editData.sqft || 0,
+          editData.yearBuilt || 0,
+          editData.bedroom || 0,
+          editData.kitchen || 0,
+          editData.type || 0,
+          editData.garage || 0,
+        ],
+        amenities: editData.amenities || [],
+      });
+      setSelectedImage(null);
+    }
+  }, [editData]);
 
   const handleInputChange = (field, value) => {
     setFormState((prev) => ({ ...prev, [field]: value }));
@@ -77,9 +88,8 @@ const Add = ({ isOpen, onClose }) => {
     }
 
     try {
-      await createListing(formData).unwrap();
-      setRemainder({ message: 'Добавлено успешно!', type: 'success' });
-      resetForm();
+      await updateListing({ id: editData._id, formData }).unwrap();
+      setRemainder({ message: 'Обновлено успешно!', type: 'success' });
 
       setTimeout(() => {
         onClose();
@@ -103,7 +113,7 @@ const Add = ({ isOpen, onClose }) => {
     <div className="modal-Add">
       <div className="modal-content">
         <div className="modal-Add-s">
-          <h2>Добавить новую карточку</h2>
+          <h2>Редактировать карточку</h2>
           <IoClose size={24} style={{ marginLeft: 'auto', cursor: 'pointer' }} onClick={onClose} />
         </div>
 
@@ -125,7 +135,7 @@ const Add = ({ isOpen, onClose }) => {
 
         <label htmlFor="imageInput" className="btn-add-photo">
           <span className="Add-icon"><FaCamera /></span>
-          <span>Добавить фото</span>
+          <span>Изменить фото</span>
         </label>
         <input
           type="file"
@@ -215,4 +225,4 @@ const Add = ({ isOpen, onClose }) => {
   );
 };
 
-export default Add;
+export default EditProperty;

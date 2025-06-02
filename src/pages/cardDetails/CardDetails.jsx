@@ -68,9 +68,14 @@ function CardDetails() {
       </div>
 
       <div className='card-img'>
-        <div className='main-img'>
-          <img src={mainImage} alt='Main property' />
-        </div>
+      <div className='main-img'>
+  {mainImage ? (
+    <img src={mainImage} alt='Main property' />
+  ) : (
+    <div className='no-img-placeholder'>Нет изображения</div>
+  )}
+</div>
+
         <div className='side-imgs'>
           {images.slice(1).map((img, idx) => (
             <img
