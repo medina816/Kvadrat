@@ -1,64 +1,63 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const productsApi = createApi({
-  reducerPath: 'productsApi',
+export const productApi = createApi({
+  reducerPath: 'productApi',
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_API_URL,
     prepareHeaders: (headers) => {
       const token = localStorage.getItem('token');
-      if (token) {
-        headers.set('Authorization', `Bearer ${token}`);
-      }
+      if (token) headers.set('Authorization', `Bearer ${token}`);
       return headers;
     },
   }),
-  tagTypes: ['Product'],
+  tagTypes: ['Products'],
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: (params) => ({
-        url: 'products',
-        params,
-      }),
-      providesTags: ['Product'],
+      query: () => '/products',
+      providesTags: ['Products'],
     }),
-
+    getFilteredProducts: builder.query({
+      query: (filters) => {
+        const params = new URLSearchParams(filters).toString();
+        return `/products?${params}`;
+      },
+      providesTags: ['Products'],
+    }),
     getProductById: builder.query({
-      query: (id) => `products/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Product', id }],
+      query: (id) => `/products/${id}`,
+      providesTags: (result, error, id) => [{ type: 'Products', id }],
     }),
-
     createProduct: builder.mutation({
       query: (formData) => ({
-        url: 'products',
+        url: '/products',
         method: 'POST',
         body: formData,
       }),
-      invalidatesTags: ['Product'],
+      invalidatesTags: ['Products'],
     }),
-
     updateProduct: builder.mutation({
       query: ({ id, formData }) => ({
-        url: `products/${id}`,
+        url: `/products/${id}`,
         method: 'PUT',
         body: formData,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: 'Product', id }],
+      invalidatesTags: ['Products'],
     }),
-
     deleteProduct: builder.mutation({
       query: (id) => ({
-        url: `products/${id}`,
+        url: `/products/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: ['Product'],
+      invalidatesTags: ['Products'],
     }),
   }),
 });
 
 export const {
   useGetProductsQuery,
+  useGetFilteredProductsQuery,
   useGetProductByIdQuery,
   useCreateProductMutation,
   useUpdateProductMutation,
   useDeleteProductMutation,
-} = productsApi;
+} = productApi;
