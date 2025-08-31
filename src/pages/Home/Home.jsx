@@ -5,15 +5,15 @@ import BlockService from '../../components/BlockService/BlockService'
 import Card from '../../shared/Card/Card.jsx' 
 import Advantages from '../../components/Advantages/Advantages.jsx'
 import FAQ from './FAQ/FAQ.jsx'
-import Reviews from './FAQ/Reviews/Reviews.jsx'
+import Reviews from './Reviews/Reviews.jsx'
 
 
 function Home() {
   return (
     <div>
-<div className="banner-full">
-  <Banner />
-</div>
+      <div className="banner-full">
+        <Banner />
+      </div>
       <BlockService />
       <Card /> 
       <Advantages />
